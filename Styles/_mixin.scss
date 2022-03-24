@@ -1,0 +1,29 @@
+ @mixin gold-gradient{
+    background: linear-gradient(269deg, #ae7e02, #e1a408, #f0cc7f, #eee8d6, #f0cc7f, #e1a408, #ae7e02);
+    background-size: 1400% 1400%;
+
+    -webkit-animation: AnimationName 6s ease infinite;
+    -moz-animation: AnimationName 6s ease infinite;
+    animation: AnimationName 6s ease infinite;
+}
+
+
+
+
+//~~~~~~~~~ keyframes ~~~~~~~~~~~
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 52%}
+    50%{background-position:100% 49%}
+    100%{background-position:0% 52%}
+}
