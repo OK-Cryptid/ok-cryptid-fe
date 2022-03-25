@@ -3,25 +3,25 @@
 
 .nav-bar {
   width: 100vw;
-  height: 20vh;
+  height: 12vh;
   background-color: $green;
   color: $cream;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2vh 5vw;
   box-shadow: 0px 14px 29px -1px rgba(0,0,0,0.65);
 }
 
 .logo {
-  height: 19vh;
+  height: 9vh;
 
 }
 
 .logo-link-container {
   display: flex;
   align-items: center;
+  margin-left: 2vw;
 }
 
 .logo-link {
@@ -30,16 +30,23 @@
 
 .logo-text {
   color: $cream;
-  font-size: 7vh;
+  font-size: 6vh;
   text-decoration: none;
-  text-shadow: -2px 5px 5px rgba(53,53,59,0.19)
+  text-shadow: -2px 5px 5px rgba(53,53,59,0.19);
 }
 
 .sightings-button {
     color: $cream;
-    font-size: 7vh;
+    font-size: 6vh;
     background: transparent;
     border: none;
     font-family: $Nova;
     text-shadow: -2px 5px 5px rgba(53,53,59,0.59);
+    margin-right: 2vw;
+}
+
+.gold-bottom-boarder {
+  @include gold-gradient;
+  padding: .5%;
+  width: 100vw;
 }

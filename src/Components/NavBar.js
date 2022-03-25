@@ -8,6 +8,7 @@ import { NavigationContext } from '../Context/NavigationContext';
 const NavBar = () => {
   const { setClick, clicked } = useContext(NavigationContext);
   return (
+    <>
     <div className='nav-bar'>
       <Link className='logo-link' to={'/'}>
         <div className='logo-link-container'>
@@ -19,6 +20,8 @@ const NavBar = () => {
         <button className='sightings-button' onClick={() => setClick(true)}>SIGHTINGS</button>
       </Link>}
     </div>
+    <div className='gold-bottom-boarder'> </div>
+    </>
   )
 }
 
