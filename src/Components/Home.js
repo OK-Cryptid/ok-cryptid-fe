@@ -1,4 +1,4 @@
-import './Home.scss'
+import '../Styles/Home.scss'
 import Card from './Card'
 import React, { useContext, useEffect } from 'react'
 import { NavigationContext } from '../Context/NavigationContext'

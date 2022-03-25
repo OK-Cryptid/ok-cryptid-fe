@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react'
-import './SingleCryptid.scss'
+import '../Styles/SingleCryptid.scss'
 import { NavigationContext } from '../Context/NavigationContext'
 
 const SingleCryptid = () => {

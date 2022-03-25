@@ -1,4 +1,4 @@
-import './Card.scss';
+import '../Styles/Card.scss';
 import React from 'react';
 
 const Card = () => {

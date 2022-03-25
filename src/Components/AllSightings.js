@@ -1,4 +1,4 @@
-import './AllSightings.scss';
+import '../Styles/AllSightings.scss';
 import './Card';
 import React from 'react';
 
