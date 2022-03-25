@@ -1,3 +1,4 @@
+import React from 'react';
 import './SingleCrypid.scss';
 
 const SingleCryptid = () => {

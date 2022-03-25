@@ -1,5 +1,6 @@
 import './AllSightings.scss';
 import './Card';
+import React from 'react';
 
 const AllSightings = () => {
   return (
