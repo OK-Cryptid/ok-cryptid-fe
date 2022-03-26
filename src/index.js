@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://api.spacex.land/graphql/",
+  uri: "https://d23edf87-6961-47d7-b3c7-aaf8d1032574.mock.pstmn.io/post",
   cache: new InMemoryCache()
 });
 
