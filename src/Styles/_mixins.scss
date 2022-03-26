@@ -4,7 +4,15 @@
  	animation: gradient 15s ease infinite;
 }
 
-
+@mixin card-container {
+  color: $cream;
+  padding: 20px;
+  display: grid;
+  justify-content: space-around;
+  grid-template-rows: auto;
+  grid-template-columns: 30% 30% 30%;
+  grid-row-gap: 50px;
+}
 
 
 //~~~~~~~~~ keyframes ~~~~~~~~~~~

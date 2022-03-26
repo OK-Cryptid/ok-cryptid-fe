@@ -1,2 +1,14 @@
 @import './_variables';
 @import './_mixins';
+
+.card {
+  @include gold-gradient;
+}
+
+.name {
+
+}
+
+.card-img {
+  width: 80%;
+}
