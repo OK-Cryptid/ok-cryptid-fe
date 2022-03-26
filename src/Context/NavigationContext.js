@@ -7,7 +7,7 @@ export const NavigationProvider = ({ children }) => {
 
 
   return (
-    <NavigationContext.Provider value={{ setClick, clicked }}>
+    <NavigationContext.Provider value={{ clicked, setClick }}>
       {children}
     </NavigationContext.Provider>
   )
