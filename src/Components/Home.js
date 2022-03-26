@@ -5,10 +5,10 @@ import { NavigationContext } from '../Context/NavigationContext'
 import { useQuery, gql } from "@apollo/client"
 
 const GET_CRYPTIDS = gql`
-    {
+    query GetCryptids {
      cryptids {
         name
-        id
+        badatter
     }
   }
 `;
@@ -27,7 +27,7 @@ const GET_CRYPTIDS = gql`
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
   const { data, loading, error } = useQuery(GET_CRYPTIDS)
-  console.log({error}.networkError)
+  console.log(error)
 
 
   useEffect(() => {
