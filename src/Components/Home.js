@@ -9,28 +9,18 @@ const GET_CRYPTIDS = gql`
     query GetCryptids {
      cryptids {
         name
-        badatter
+        id
+        image
     }
   }
 `;
-
-// const useCryptids = () => {
-//   const { data, loading, error } = useQuery(GET_CRYPTIDS)
-
-//   return (
-//     error,
-//     data,
-//     loading
-//   )
-
-// }
 
 
 
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
   const { data, loading, error } = useQuery(GET_CRYPTIDS)
-  console.log(error)
+  console.log(data)
 
 
   useEffect(() => {
