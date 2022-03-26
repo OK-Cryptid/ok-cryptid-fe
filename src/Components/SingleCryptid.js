@@ -24,25 +24,29 @@ const SingleCryptid = () => {
     variables:
     name
   })
-
-  console.log({data, error, loading})
-  const { setClick } = useContext(NavigationContext)
-
+  
   useEffect(() => {
     setClick(false)
   }, [])
 
+  console.log({data, error, loading})
+  const { setClick } = useContext(NavigationContext)
+
+  if (loading) return "Loading..."
+  
+  if (error) return <pre>{error.message}</pre>
+
+
   return (
     <div className='single-cryptid-container'>
       <div className='cryptid-img-container'>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+        <img src={data.cryptidByName.image} alt='bigfoot' className='temp-photo' />
       </div>
       <div className='cryptid-info-container'>
-        <h1 className='cryptid-name'>Name</h1>
-        <p className='cryptid-location'>Location: placeholder</p>
-        <p className='cryptid-description'>Description: Placeholder</p>
+        <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
+        <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
         <button className='cryptid-button-sightings'>Sightings of Name</button>
-        <p className='cryptid-danger'>Danger Level: fake/10</p>
+        <p className='cryptid-danger'>Danger Level: {data.cryptidByName.dangerLevel}</p>
       </div>
     </div>
   )
