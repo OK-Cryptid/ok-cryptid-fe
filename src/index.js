@@ -4,10 +4,18 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://d23edf87-6961-47d7-b3c7-aaf8d1032574.mock.pstmn.io/post",
+  cache: new InMemoryCache()
+});
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+   <ApolloProvider client={client}>
+      <App />
+   </ApolloProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );
