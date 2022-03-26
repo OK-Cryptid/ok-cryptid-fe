@@ -1,5 +1,5 @@
 import '../Styles/Home.scss'
-import Card from './Card'
+import CryptidCard from './CryptidCard'
 import React, { useContext, useEffect } from 'react'
 import { NavigationContext } from '../Context/NavigationContext'
 import { useQuery, gql } from "@apollo/client"
@@ -13,19 +13,30 @@ const GET_CRYPTIDS = gql`
         image
     }
   }
-`;
+`
 
 
 
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
   const { data, loading, error } = useQuery(GET_CRYPTIDS)
-  console.log(data)
-
 
   useEffect(() => {
     setClick(false)
   }, [])
+
+  
+  if (loading) return "Loading..."
+  
+  if (error) return <pre>{error.message}</pre>
+  
+  const cryptidCards = data.cryptids.map(cryptid => 
+        <CryptidCard 
+          key={cryptid.id}
+          id={cryptid.id} 
+          name={cryptid.name} 
+          image={cryptid.image}
+        />)
 
   return (
     <>
@@ -35,31 +46,7 @@ const Home = () => {
       </p>
     </div>
     <div className='home-card-container'>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-
+      {cryptidCards}
     </div>
     </>
   )
