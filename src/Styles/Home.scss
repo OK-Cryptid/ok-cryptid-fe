@@ -1,0 +1,14 @@
+@import './_variables';
+@import './_mixins';
+
+.temp-photo {
+  width: 80%;
+}
+
+.home-message-container {
+  color: $cream;
+}
+
+.home-card-container {
+  @include card-container;
+}

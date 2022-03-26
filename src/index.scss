@@ -1,13 +1,12 @@
-@import '../Styles/_mixins.scss';
-@import '../Styles/_variables.scss';
+@import './Styles/_mixins.scss';
+@import './Styles/_variables.scss';
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: $Nova;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $brown;
 }
 
 code {
