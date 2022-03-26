@@ -1,5 +1,5 @@
 import '../Styles/AllSightings.scss';
-import './Card';
+import SightingCard from './SightingCard';
 import React, {useState} from 'react';
 import bigfoot from '../assets/bigfoot.jpg';
 

@@ -2,7 +2,7 @@ import '../Styles/Card.scss';
 import React from 'react';
 import bigfoot from '../assets/bigfoot.jpg'
 
-const Card = () => {
+const SightingCard = () => {
   return (
     <div className='card'>
       <p className='name'>fake card</p>
@@ -12,4 +12,4 @@ const Card = () => {
   )
 }
 
-export default Card;
+export default SightingCard;
