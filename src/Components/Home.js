@@ -3,7 +3,6 @@ import CryptidCard from './CryptidCard'
 import React, { useContext, useEffect } from 'react'
 import { NavigationContext } from '../Context/NavigationContext'
 import { useQuery, gql } from "@apollo/client"
-import bigfoot from '../assets/bigfoot.jpg'
 
 const GET_CRYPTIDS = gql`
     query GetCryptids {
@@ -14,8 +13,6 @@ const GET_CRYPTIDS = gql`
     }
   }
 `
-
-
 
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
