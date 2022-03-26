@@ -13,7 +13,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/singlecryptid/:id" element={<SingleCryptid />} />
+        <Route path="/singlecryptid/:name" element={<SingleCryptid />} />
         <Route path="/allsightings" element={<AllSightings />} />
       </Routes>
     </NavigationProvider>

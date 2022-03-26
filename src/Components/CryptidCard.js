@@ -1,13 +1,15 @@
-import '../Styles/Card.scss';
-import React from 'react';
+import '../Styles/Card.scss'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CryptidCard = ({ id, name, image }) => {
+  console.log(name)
   return (
-    <div className='card' id={id}>
+    <Link to={`/singlecryptid/${name}`} className='card' id={id}>
       <p className='name'>{name}</p>
       <img src={image} alt='bigfoot' className='card-img' />
-    </div>
+    </Link>
   )
 }
 
-export default CryptidCard;
+export default CryptidCard
