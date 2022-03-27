@@ -22,16 +22,16 @@ const Home = () => {
     setClick(false)
   }, [])
 
-  
+
   if (loading) return "Loading..."
-  
+
   if (error) return <pre>{error.message}</pre>
-  
-  const cryptidCards = data.cryptids.map(cryptid => 
-        <CryptidCard 
+
+  const cryptidCards = data.cryptids.map(cryptid =>
+        <CryptidCard
           key={cryptid.id}
-          id={cryptid.id} 
-          name={cryptid.name} 
+          id={cryptid.id}
+          name={cryptid.name}
           image={cryptid.image}
         />)
 

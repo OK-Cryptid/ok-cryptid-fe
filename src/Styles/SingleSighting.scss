@@ -1,0 +1,101 @@
+@import './_variables';
+@import './_mixins';
+
+.single-sighting-container {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-around;
+  height: 80vh;
+}
+
+.sighting-img-container{
+  @include gold-gradient
+  width: 40vw;
+  height: 80vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sighting-photo {
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cryptid-button-sightings:hover {
+  @include button-hover;
+}
+
+.sighting-name-box {
+  @include gold-gradient;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 3%;
+  color: $cream;
+  font-size: 5vh;
+  padding: 1vw 4vw;
+  box-shadow: 0px 2px 9px -1px rgba(0,0,0,.4);
+  text-shadow: 0px 1px 4px rgba(53,53,59,1);
+}
+
+.sighting-name-text {
+  margin: 0;
+}
+
+.sighting-info-container{
+  width: 40vw;
+  height: 80vh;
+  background-color: $cream-opacity;
+  box-shadow:  inset 0 0 10px #000000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 3vh;
+}
+
+.danger-container {
+  @include gold-gradient;
+  padding: .5vw .5vw;
+  border-radius: 3px;
+  box-shadow: 0px 2px 9px -1px rgba(0,0,0,.4);
+  text-shadow: 0px 1px 4px rgba(53,53,59,1);
+  color: $cream;
+  margin-left: 1vw;
+}
+
+.trails-container {
+  height: 40vh;
+  width: 35vw;
+  overflow-y: scroll;
+}
+
+//// needs to go into the trail card scss file once we are generating cards :)>>>>>>>>>>>>
+.trail-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20vh;
+  width: 30vw;
+  margin-bottom: 1vh;
+}
+
+.gold-trail-container {
+  @include gold-gradient;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trail-card-img {
+  border-radius: 5px;
+}
+
+.trail-details-container {
+  font-family: $Marcellus;
+}
