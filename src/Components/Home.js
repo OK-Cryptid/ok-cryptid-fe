@@ -22,16 +22,16 @@ const Home = () => {
     setClick(false)
   }, [])
 
-  
+
   if (loading) return "Loading..."
-  
+
   if (error) return <pre>{error.message}</pre>
-  
-  const cryptidCards = data.cryptids.map(cryptid => 
-        <CryptidCard 
+
+  const cryptidCards = data.cryptids.map(cryptid =>
+        <CryptidCard
           key={cryptid.id}
-          id={cryptid.id} 
-          name={cryptid.name} 
+          id={cryptid.id}
+          name={cryptid.name}
           image={cryptid.image}
         />)
 
@@ -43,35 +43,7 @@ const Home = () => {
       </p>
     </div>
     <div className='home-card-container'>
-<<<<<<< HEAD
       {cryptidCards}
-=======
-      <div>
-        <p className='card-name'>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-      <div>
-        <p>fake card</p>
-        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
-      </div>
-
->>>>>>> e940769 (Added Error Modal/styling)
     </div>
     </>
   )
