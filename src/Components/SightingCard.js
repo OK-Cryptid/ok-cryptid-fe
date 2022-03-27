@@ -1,14 +1,16 @@
 import '../Styles/Card.scss';
 import React from 'react';
+import { Link } from 'react-router-dom'
 import bigfoot from '../assets/bigfoot.jpg'
 
-const SightingCard = () => {
+const SightingCard = ({ id, name, image }) => {
   return (
-    <div className='card'>
-      <p className='name'>fake card Text</p>
-      <p className='location'>fake location</p>
-      <img src={bigfoot} alt='bigfoot' className='card-img' />
-    </div>
+    <>
+    <Link to={`/singlecryptid/${name}`} className='card' id={id}>
+      <div className='name'>{name}</div>
+      <img src={image} alt='bigfoot' className='card-img' />
+    </Link>
+    </>
   )
 }
 

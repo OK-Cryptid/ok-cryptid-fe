@@ -7,12 +7,6 @@
   margin: 2%;
 }
 
-.cryptid-button-sightings {
-  @include gold-gradient;
-  border-radius: 5px;
-  color: $cream;
-}
-
 .cryptid-button:hover {
   @include button-hover;
 }
