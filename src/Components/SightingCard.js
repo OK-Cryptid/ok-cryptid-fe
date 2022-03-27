@@ -5,7 +5,7 @@ import bigfoot from '../assets/bigfoot.jpg'
 const SightingCard = () => {
   return (
     <div className='card'>
-      <p className='name'>fake card</p>
+      <p className='name'>fake card Text</p>
       <p className='location'>fake location</p>
       <img src={bigfoot} alt='bigfoot' className='card-img' />
     </div>

@@ -43,7 +43,35 @@ const Home = () => {
       </p>
     </div>
     <div className='home-card-container'>
+<<<<<<< HEAD
       {cryptidCards}
+=======
+      <div>
+        <p className='card-name'>fake card</p>
+        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+      <div>
+        <p>fake card</p>
+        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+      <div>
+        <p>fake card</p>
+        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+      <div>
+        <p>fake card</p>
+        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+      <div>
+        <p>fake card</p>
+        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+      <div>
+        <p>fake card</p>
+        <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+
+>>>>>>> e940769 (Added Error Modal/styling)
     </div>
     </>
   )

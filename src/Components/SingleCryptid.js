@@ -19,12 +19,12 @@ const GET_SINGLE_CRYPTID = gql`
 
 const SingleCryptid = () => {
   const {name} = useParams()
-  
+
   const {data, error, loading} = useQuery(GET_SINGLE_CRYPTID, {
     variables:
     name
   })
-  
+
   useEffect(() => {
     setClick(false)
   }, [])
@@ -33,13 +33,14 @@ const SingleCryptid = () => {
   const { setClick } = useContext(NavigationContext)
 
   if (loading) return "Loading..."
-  
+
   if (error) return <pre>{error.message}</pre>
 
 
   return (
     <div className='single-cryptid-container'>
       <div className='cryptid-img-container'>
+
         <img src={data.cryptidByName.image} alt='bigfoot' className='temp-photo' />
       </div>
       <div className='cryptid-info-container'>
@@ -47,6 +48,16 @@ const SingleCryptid = () => {
         <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
         <button className='cryptid-button-sightings'>Sightings of Name</button>
         <p className='cryptid-danger'>Danger Level: {data.cryptidByName.dangerLevel}</p>
+
+      <img src={bigfoot} alt='bigfoot' className='temp-photo' />
+      </div>
+      <div className='cryptid-info-container'>
+        <h1 className='cryptid-name'>Name</h1>
+        <p className='cryptid-location'>Location: placeholder</p>
+        <p className='cryptid-description'>Description: Placeholder</p>
+        <button className='cryptid-button-sightings'>Sightings of Name</button>
+        <p className='cryptid-danger'>Danger Level: <span className='gold-container'>fake/10</span></p>
+
       </div>
     </div>
   )
