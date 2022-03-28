@@ -2,6 +2,7 @@ import '../Styles/Home.scss'
 import CryptidCard from './CryptidCard'
 import React, { useContext, useEffect } from 'react'
 import { NavigationContext } from '../Context/NavigationContext'
+import { ErrorContext } from '../Context/ErrorContext'
 import { useQuery, gql } from "@apollo/client"
 
 const GET_CRYPTIDS = gql`
@@ -16,6 +17,7 @@ const GET_CRYPTIDS = gql`
 
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
+  const { setError } = useContext(ErrorContext)
   const { data, loading, error } = useQuery(GET_CRYPTIDS, {
     context: {
       headers: {
@@ -31,7 +33,9 @@ const Home = () => {
 
   if (loading) return "Loading..."
 
-  if (error) return <pre>{error.message}</pre>
+  if (error) {
+    setError(error)
+  }
 
   const cryptidCards = data.cryptids.map(cryptid =>
         <CryptidCard
