@@ -6,7 +6,7 @@ import { ErrorContext } from '../Context/ErrorContext'
 import { useQuery, gql } from "@apollo/client"
 
 const GET_CRYPTIDS = gql`
-    query GetCryptids {
+    query getCryptids {
      cryptids {
         name
         id
