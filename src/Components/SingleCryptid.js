@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import '../Styles/SingleCryptid.scss'
 import { NavigationContext } from '../Context/NavigationContext'
 import { ErrorContext } from '../Context/ErrorContext'
+import FootPrints from './FootPrints'
 import {gql, useQuery} from '@apollo/client'
 import { useParams } from 'react-router-dom'
 
@@ -44,10 +45,13 @@ const SingleCryptid = () => {
         <img src={data.cryptidByName.image} alt='bigfoot' className='single-cryptid-photo' />
       </div>
       <div className='cryptid-info-container'>
-        <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
-        <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
-        <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName.name}</button>
-        <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName.dangerLevel}/10</span></p>
+        <div className='cryptid-details'>
+          <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
+          <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName.dangerLevel}/10</span></p>
+          <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
+          <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName.name}</button>
+        </div>
+        <FootPrints/>
       </div>
     </div>
   )
