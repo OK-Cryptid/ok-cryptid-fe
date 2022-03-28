@@ -6,8 +6,8 @@ import { ErrorContext } from '../Context/ErrorContext'
 import { useQuery, gql } from "@apollo/client"
 
 const GET_CRYPTIDS = gql`
-    query getCryptids {
-     cryptids {
+    query GetCryptids {
+     getCryptids {
         name
         id
         image
@@ -26,12 +26,12 @@ const Home = () => {
 
 
   if (loading) return "Loading..."
+  
+  if (data.errors) {
+    return setError(data.errors)
+  }
 
-  // if (error) {
-  //   setError(error)
-  // }
-
-  const cryptidCards = data.cryptids.map(cryptid =>
+  const cryptidCards = data.getCryptids.map(cryptid =>
         <CryptidCard
           key={cryptid.id}
           id={cryptid.id}
