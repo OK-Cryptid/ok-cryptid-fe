@@ -6,7 +6,7 @@ import { ErrorContext } from '../Context/ErrorContext'
 import { useQuery, gql } from "@apollo/client"
 
 const GET_CRYPTIDS = gql`
-    query GetCryptids {
+    query getCryptids {
      cryptids {
         name
         id
@@ -18,13 +18,7 @@ const GET_CRYPTIDS = gql`
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
   const { setError } = useContext(ErrorContext)
-  const { data, loading, error } = useQuery(GET_CRYPTIDS, {
-    context: {
-      headers: {
-        "x-mock-match-request-body": true
-      }
-    }
-  })
+  const { data, loading, error } = useQuery(GET_CRYPTIDS)
 
   useEffect(() => {
     setClick(false)
