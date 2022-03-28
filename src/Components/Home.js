@@ -18,13 +18,7 @@ const GET_CRYPTIDS = gql`
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
   const { setError } = useContext(ErrorContext)
-  const { data, loading, error } = useQuery(GET_CRYPTIDS, {
-    context: {
-      headers: {
-        "x-mock-match-request-body": true
-      }
-    }
-  })
+  const { data, loading, error } = useQuery(GET_CRYPTIDS)
 
   useEffect(() => {
     setClick(false)
