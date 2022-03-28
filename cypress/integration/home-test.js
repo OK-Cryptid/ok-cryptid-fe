@@ -1,7 +1,7 @@
 describe('Home page cypress test', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3001')
   })
   it('Should confirm that true is equal to true', () => {
     expect(true).to.equal(true)
@@ -10,14 +10,13 @@ describe('Home page cypress test', () => {
 
   it('Should render elements to the page', () => {
     cy.get('.logo')
-    cy.get('#root > :nth-child(3)')
-    cy.get('button')
+    cy.get('.home-message')
+    cy.get('.home-card-container')
   })
 
   it('Should click on button and move to sightings page', () => {
     cy.get('button').click()
-    cy.get('#root > :nth-child(2)')
-      .contains('Sightings')
+    cy.get('.logo').click()
   })
 
 });
