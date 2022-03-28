@@ -13,27 +13,30 @@ const AllSightings = () => {
 
   return (
     <>
-      <div className='search-container'>
-        <div>
-          <button
-            className='cryptid-button'
-            onClick={toggleDisplay}
-          >
-            Cryptids
-          </button>
-          {display &&
-            <div className='dropdown-container'>
-              <p>things go here</p>
-            </div>
-          }
+      <div className='sightings-header'>
+        <h1 className='sightings-text'>Sightings</h1>
+        <div className='search-container'>
+          <div>
+            <button
+              className='cryptid-button'
+              onClick={toggleDisplay}
+            >
+              Search by Cryptids
+            </button>
+            {display &&
+              <div className='dropdown-container'>
+                <p>things go here</p>
+              </div>
+            }
+          </div>
+          <form>
+            <input
+              className='zipcode-input'
+              type="text"
+              placeholder="Search by Zipcode"
+            />
+          </form>
         </div>
-        <form>
-          <input
-            className='zipcode-input'
-            type="text"
-            placeholder="zipcode"
-          />
-        </form>
       </div>
       <div className='all-sightings-container'>
         <div>

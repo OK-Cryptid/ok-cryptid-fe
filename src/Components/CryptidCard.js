@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const CryptidCard = ({ id, name, image }) => {
-  console.log(name)
   return (
     <>
     <Link to={`/singlecryptid/${name}`} className='card' id={id}>
