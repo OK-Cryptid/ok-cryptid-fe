@@ -1,10 +1,18 @@
-@import './_variables';
-@import './_mixins';
+@import "./_variables";
+@import "./_mixins";
 
 .search-container {
   display: flex;
   justify-content: space-around;
   margin: 2%;
+  width: 40%;
+}
+
+.cryptid-button {
+  @include cream-button;
+  width: 12vw;
+  box-sizing: border-box;
+  height: 4vh;
 }
 
 .cryptid-button:hover {
@@ -15,11 +23,23 @@
   background-color: $cream;
   color: black;
   border-radius: 7px;
-  box-shadow: 0px 14px 29px -1px rgba(0,0,0,0.65);
+  box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
   border: none;
   padding: 7%;
+  box-sizing: border-box;
+  height: 4vh;
 }
 
 .all-sightings-container {
   @include card-container;
+}
+
+.sightings-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+
+.sightings-text {
+  color: $cream;
 }
