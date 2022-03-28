@@ -74,6 +74,16 @@
   overflow-y: scroll;
 }
 
+.sighting-details {
+  z-index: 1;
+  width: 40vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 //// needs to go into the trail card scss file once we are generating cards :)>>>>>>>>>>>>
 .trail-card {
   display: flex;

@@ -1,0 +1,130 @@
+.foot-print-container {
+  position: absolute;
+  width: 30vw;
+  height: 70vh;
+  opacity: .5;
+}
+
+.right-print-one {
+  position: absolute;
+  height: 10vh;
+  left: 0%;
+  bottom: 0%;
+  animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 1s;
+  opacity: 0;
+  transform: rotate(65deg);
+}
+
+.left-print-one {
+  position: absolute;
+  bottom: 15%;
+  left: 0%;
+  height: 10vh;
+ animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 1.5s;
+  opacity: 0;
+  transform: rotate(15deg);
+}
+
+.right-print-two {
+  position: absolute;
+  height: 10vh;
+  bottom: 20%;
+  left: 20%;
+animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 2s;
+  opacity: 0;
+  transform: rotate(65deg);
+}
+
+.left-print-two {
+  position: absolute;
+  height: 10vh;
+  bottom: 35%;
+  left: 20%;
+animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 2.5s;
+  opacity: 0;
+  transform: rotate(25deg);
+}
+
+.right-print-three {
+  position: absolute;
+  height: 10vh;
+  left: 40%;
+  bottom: 35%;
+animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 3s;
+  opacity: 0;
+  transform: rotate(65deg);
+}
+
+.left-print-three {
+  position: absolute;
+  height: 10vh;
+  left: 40%;
+  bottom: 50%;
+  animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 3.5s;
+  opacity: 0;
+  transform: rotate(25deg);
+}
+
+.right-print-four {
+  position: absolute;
+  height: 10vh;
+  left: 60%;
+  bottom: 50%;
+  animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 4s;
+  opacity: 0;
+  transform: rotate(65deg);
+}
+
+.left-print-four {
+  position: absolute;
+  height: 10vh;
+  left: 60%;
+  bottom: 65%;
+  animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 4.5s;
+  opacity: 0;
+  transform: rotate(25deg);
+}
+
+.right-print-five {
+  position: absolute;
+  height: 10vh;
+  left: 80%;
+  bottom: 65%;
+  animation: 2050ms footFade ease-in-out infinite ;
+  animation-delay: 5s;
+  opacity: 0;
+  transform: rotate(65deg);
+}
+
+.left-print-five {
+  position: absolute;
+  height: 10vh;
+  left: 80%;
+  bottom: 83%;
+  animation: 2050ms footFade ease-in-out infinite;
+  animation-delay: 5.5s;
+  opacity: 0;
+  transform: rotate(25deg);
+}
+
+//~~~~~~~~~ keyframes ~~~~~~~~
+
+@keyframes footFade {
+	0%{
+		opacity: 1;
+	}
+  75%{
+    opacity: 0.25;
+  }
+	100%{
+		opacity: 0.05;
+	}
+}

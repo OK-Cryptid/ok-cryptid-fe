@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import '../Styles/SingleSighting.scss'
 import TrailCard from './SingleSighting'
 import { NavigationContext } from '../Context/NavigationContext'
+import FootPrints from './FootPrints'
 import {gql, useQuery} from '@apollo/client'
 import bigfoot from '../assets/bigfoot.jpg'
 
@@ -25,6 +26,7 @@ const SingleSighting = () => {
         </div>
       </div>
       <div className='sighting-info-container'>
+      <div className='sighting-details'>
         <p className='sighting-location'>Location: placeholder</p>
         <p className='near-text'>Nearby Trails:</p>
           <div className='trails-container'>
@@ -69,6 +71,8 @@ const SingleSighting = () => {
           Danger Level:
           <span className='danger-container'>fake/10</span>
         </p>
+        </div>
+        <FootPrints/>
       </div>
     </div>
   )

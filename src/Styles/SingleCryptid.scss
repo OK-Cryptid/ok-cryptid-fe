@@ -60,3 +60,12 @@
   color: $cream;
   margin-left: 1vw;
 }
+.cryptid-details{
+  z-index: 1;
+  width: 40vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
