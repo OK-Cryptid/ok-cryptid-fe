@@ -18,6 +18,7 @@ const GET_CRYPTIDS = gql`
 const Home = () => {
   const { setClick } = useContext(NavigationContext)
   const { setError } = useContext(ErrorContext)
+
   const { data, loading, error } = useQuery(GET_CRYPTIDS)
 
   useEffect(() => {
@@ -26,29 +27,29 @@ const Home = () => {
 
 
   if (loading) return "Loading..."
-  
+
   if (data.errors) {
     return setError(data.errors)
   }
 
   const cryptidCards = data.getCryptids.map(cryptid =>
-        <CryptidCard
-          key={cryptid.id}
-          id={cryptid.id}
-          name={cryptid.name}
-          image={cryptid.image}
-        />)
+    <CryptidCard
+      key={cryptid.id}
+      id={cryptid.id}
+      name={cryptid.name}
+      image={cryptid.image}
+    />)
 
   return (
     <>
-    <div className='home-message-container'>
-      <p className='home-message'>
-        Ok Cryptid is here to help you have your very own cryptid encounter! We’ll help you identify the trails where you are  mostly likely to cross paths with your favorite cryptid!
-      </p>
-    </div>
-    <div className='home-card-container'>
-      {cryptidCards}
-    </div>
+      <div className='home-message-container'>
+        <p className='home-message'>
+          Ok Cryptid is here to help you have your very own cryptid encounter! We’ll help you identify the trails where you are  mostly likely to cross paths with your favorite cryptid!
+        </p>
+      </div>
+      <div className='home-card-container'>
+        {cryptidCards}
+      </div>
     </>
   )
 }

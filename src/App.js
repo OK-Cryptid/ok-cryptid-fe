@@ -9,19 +9,22 @@ import NavBar from './Components/NavBar';
 import ErrorModal from './Components/ErrorModal'
 import { NavigationProvider } from './Context/NavigationContext';
 import { ErrorProvider } from './Context/ErrorContext'
+import { CryptidProvider } from './Context/CryptidContext';
 
 const App = () => {
   return (
     <ErrorProvider>
       <NavigationProvider>
-        <NavBar />
-        <ErrorModal />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/singlecryptid/:name" element={<SingleCryptid />} />
-          <Route path="/allsightings" element={<AllSightings />} />
-          <Route path="/singlesighting/:name" element={<SingleSighting />}/>
-        </Routes>
+        <CryptidProvider>
+          <NavBar />
+          <ErrorModal />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/singlecryptid/:name" element={<SingleCryptid />} />
+            <Route path="/allsightings" element={<AllSightings />} />
+            <Route path="/singlesighting/:name" element={<SingleSighting />} />
+          </Routes>
+        </CryptidProvider>
       </NavigationProvider>
     </ErrorProvider>
   );
