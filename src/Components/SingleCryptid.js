@@ -24,11 +24,6 @@ const SingleCryptid = () => {
   const {data, error, loading} = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
       name: name
-    },
-    context: {
-      headers: {
-        "x-mock-match-request-body": true
-      }
     }
   })
 
