@@ -27,9 +27,9 @@ const Home = () => {
 
   if (loading) return "Loading..."
 
-  if (error) {
-    setError(error)
-  }
+  // if (error) {
+  //   setError(error)
+  // }
 
   const cryptidCards = data.cryptids.map(cryptid =>
         <CryptidCard
