@@ -20,12 +20,14 @@ const GET_ALL_SIGHTINGS = gql`
 
 const AllSightings = () => {
   const [display, setDisplay] = useState(false)
+  const [pageData, setPageData] = useState({})
   const { setError } = useContext(ErrorContext)
   const { setClick } = useContext(NavigationContext)
   const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
 
   useEffect(() => {
     setClick(true)
+    setPageData(data)
   }, [])
 
   const toggleDisplay = () => {
@@ -34,12 +36,19 @@ const AllSightings = () => {
 
   const handleClick = (event) => {
     toggleDisplay()
-    //filterSightings(event.target.id)
+    filterSightings(event.target.id)
   }
 
-  // const filterSightings = (name) => {
+  const filterSightings = (name) => {
+    data.getCryptids.filter(cryptid => {
+      return cryptid.name === name
+    })
+  }
 
-  // }
+  const resetData = () => {
+    toggleDisplay()
+    setPageData(data)
+  }
 
   if (loading) return "Loading..."
 
@@ -80,6 +89,7 @@ const AllSightings = () => {
             </button>
             {display &&
               <div className='dropdown-container'>
+                <button onClick={() => resetData()}>All Cryptid Sightings</button>
                 {dropDownButtons}
               </div>
             }
