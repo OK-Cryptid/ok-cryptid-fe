@@ -21,13 +21,17 @@ const GET_SINGLE_CRYPTID = gql`
 const AllSightings = () => {
   const [display, setDisplay] = useState(false)
   const { setError } = useContext(ErrorContext)
-  const { cryptid } = useContext(CryptidContext)
+  const { cryptid, setCryptid } = useContext(CryptidContext)
   console.log("cryptid: ", cryptid)
   const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
       name: cryptid
     }
   })
+
+  const clearCryptid = () => {
+    setCryptid()
+  }
   const toggleDisplay = () => {
     setDisplay(!display)
   }
@@ -54,7 +58,7 @@ const AllSightings = () => {
   return (
     <>
       <div className='sightings-header'>
-        <h1 className='sightings-text'>Sightings</h1>
+        <h1 className='sightings-text'>{cryptid} Sightings</h1>
         <div className='search-container'>
           <div>
             <button
