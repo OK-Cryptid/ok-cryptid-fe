@@ -1,8 +1,9 @@
 import '../Styles/AllSightings.scss';
 import SightingCard from './SightingCard';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { ErrorContext } from '../Context/ErrorContext'
+import { NavigationContext } from '../Context/NavigationContext'
 
 const GET_ALL_SIGHTINGS = gql`
   query GetAllSightings{
@@ -20,7 +21,12 @@ const GET_ALL_SIGHTINGS = gql`
 const AllSightings = () => {
   const [display, setDisplay] = useState(false)
   const { setError } = useContext(ErrorContext)
+  const { setClick } = useContext(NavigationContext)
   const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
+
+  useEffect(() => {
+    setClick(true)
+  }, [])
 
   const toggleDisplay = () => {
     setDisplay(!display)
