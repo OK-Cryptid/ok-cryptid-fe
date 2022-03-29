@@ -4,7 +4,7 @@ import { NavigationContext } from '../Context/NavigationContext'
 import { ErrorContext } from '../Context/ErrorContext'
 import FootPrints from './FootPrints'
 import { gql, useQuery } from '@apollo/client'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CryptidContext } from '../Context/CryptidContext'
 
 const GET_SINGLE_CRYPTID = gql`
@@ -20,7 +20,6 @@ const GET_SINGLE_CRYPTID = gql`
 `
 
 const SingleCryptid = () => {
-  //const { name } = useParams()
   const { cryptid } = useContext(CryptidContext)
   const { setClick } = useContext(NavigationContext)
   const { setError } = useContext(ErrorContext)
