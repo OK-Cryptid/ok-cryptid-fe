@@ -1,27 +1,36 @@
 import '../Styles/AllSightings.scss';
 import SightingCard from './SightingCard';
 import React, { useState, useContext } from 'react';
+import { CryptidContext } from '../Context/CryptidContext';
 import { useQuery, gql } from '@apollo/client';
 import { ErrorContext } from '../Context/ErrorContext'
 
-const GET_ALL_SIGHTINGS = gql`
-  query GetAllSightings{
-    getCryptids{
-      name
-      sightings {
-        id
-        location
-        image
-      }
+const GET_SINGLE_CRYPTID = gql`
+  query GetCryptid($name: String!) {
+    cryptidByName(name: $name){
+        sightings {
+          id
+          location
+          image
+        }
     }
   }
 `
 
-const AllSightings = () => {
+const SingleCryptidSightings = () => {
   const [display, setDisplay] = useState(false)
   const { setError } = useContext(ErrorContext)
-  const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
+  const { cryptid, setCryptid } = useContext(CryptidContext)
+  console.log("cryptid: ", cryptid)
+  const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
+    variables: {
+      name: cryptid
+    }
+  })
 
+  const clearCryptid = () => {
+    setCryptid()
+  }
   const toggleDisplay = () => {
     setDisplay(!display)
   }
@@ -32,25 +41,24 @@ const AllSightings = () => {
   }
   console.log(data)
 
-  const sightingCards = data.getCryptids.map(cryptid => {
-    return cryptid.sightings.map(sighting => {
-      return (
-        <SightingCard
-          key={sighting.id}
-          location={sighting.location}
-          image={sighting.image}
-          name={cryptid.name}
-        />
-      )
-    })
+  const sightingCards = data.cryptidByName.sightings.map(sighting => {
+    return (
+      <SightingCard
+        key={sighting.id}
+        location={sighting.location}
+        image={sighting.image}
+      />
+
+
+    )
   })
 
 
   return (
     <>
       <div className='sightings-header'>
-        <h1 className='sightings-text'>All Sightings</h1>
-        <div className='search-container'>
+        <h1 className='sightings-text'>{cryptid} Sightings</h1>
+        {/* <div className='search-container'>
           <div>
             <button
               className='cryptid-button'
@@ -70,8 +78,8 @@ const AllSightings = () => {
               type="text"
               placeholder="Search by Zipcode"
             />
-          </form>
-        </div>
+          </form> */}
+        {/* </div> */}
       </div>
       <div className='all-sightings-container'>
         {sightingCards}
@@ -81,4 +89,4 @@ const AllSightings = () => {
   )
 }
 
-export default AllSightings;
+export default SingleCryptidSightings;

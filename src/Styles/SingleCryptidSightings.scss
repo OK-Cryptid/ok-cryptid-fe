@@ -1,0 +1,17 @@
+@import "./_variables";
+@import "./_mixins";
+
+
+.all-sightings-container {
+  @include card-container;
+}
+
+.sightings-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+
+.sightings-text {
+  color: $cream;
+}
