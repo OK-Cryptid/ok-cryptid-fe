@@ -31,11 +31,20 @@ const AllSightings = () => {
   const toggleDisplay = () => {
     setDisplay(!display)
   }
+
+  const handleClick = (event) => {
+    toggleDisplay()
+    //filterSightings(event.target.id)
+  }
+
+  // const filterSightings = (name) => {
+
+  // }
+
   if (loading) return "Loading..."
 
-  if (error) {
-    return setError(error)
-  }
+  if (error) return setError(error)
+
   console.log(data)
 
   const sightingCards = data.getCryptids.map(cryptid => {
@@ -51,6 +60,11 @@ const AllSightings = () => {
     })
   })
 
+  const dropDownButtons = data.getCryptids.map(cryptid => {
+    return (
+      <button id={cryptid.name} onClick={(event) => handleClick(event)}>{cryptid.name}</button>
+    )
+  })
 
   return (
     <>
@@ -66,7 +80,7 @@ const AllSightings = () => {
             </button>
             {display &&
               <div className='dropdown-container'>
-                <p>things go here</p>
+                {dropDownButtons}
               </div>
             }
           </div>
