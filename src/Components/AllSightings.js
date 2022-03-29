@@ -19,15 +19,15 @@ const GET_ALL_SIGHTINGS = gql`
 `
 
 const AllSightings = () => {
+  const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
   const [display, setDisplay] = useState(false)
-  const [pageData, setPageData] = useState({})
+  const [pageData, setPageData] = useState(null)
   const { setError } = useContext(ErrorContext)
   const { setClick } = useContext(NavigationContext)
-  const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
 
   useEffect(() => {
     setClick(true)
-    setPageData(data)
+    //setPageData(data)
   }, [])
 
   const toggleDisplay = () => {
@@ -40,23 +40,28 @@ const AllSightings = () => {
   }
 
   const filterSightings = (name) => {
-    data.getCryptids.filter(cryptid => {
+    const filteredSightings = data.getCryptids.filter(cryptid => {
       return cryptid.name === name
     })
+    setPageData(filteredSightings)
   }
 
   const resetData = () => {
     toggleDisplay()
-    setPageData(data)
+    setPageData(data.getCryptids)
+    console.log("pageData in resetData: ", pageData)
   }
 
   if (loading) return "Loading..."
 
+  if (!loading && !pageData) return setPageData(data.getCryptids)
+
   if (error) return setError(error)
 
-  console.log(data)
+  // console.log("pageData: ", pageData)
+  // console.log("data line 61: ", data)
 
-  const sightingCards = data.getCryptids.map(cryptid => {
+  const sightingCards = pageData.map(cryptid => {
     return cryptid.sightings.map(sighting => {
       return (
         <SightingCard
@@ -71,7 +76,7 @@ const AllSightings = () => {
 
   const dropDownButtons = data.getCryptids.map(cryptid => {
     return (
-      <button id={cryptid.name} onClick={(event) => handleClick(event)}>{cryptid.name}</button>
+      <button key={cryptid.id} id={cryptid.name} onClick={(event) => handleClick(event)}>{cryptid.name}</button>
     )
   })
 
@@ -104,7 +109,7 @@ const AllSightings = () => {
         </div>
       </div>
       <div className='all-sightings-container'>
-        {sightingCards}
+        {pageData && sightingCards}
       </div>
 
     </>
