@@ -3,12 +3,16 @@ describe('All sightings page cypress test', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
+  
   it('Should confirm that true is equal to true', () => {
     expect(true).to.equal(true)
     expect(true).to.equal(true)
   });
 
   it('Should start on the home page and click sighting button', () => {
+    cy.get('.logo')
+    cy.get('.home-message')
+    cy.get('.home-card-container')
     cy.get('button').click()
   })
 
