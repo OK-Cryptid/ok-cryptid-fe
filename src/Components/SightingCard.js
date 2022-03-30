@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import bigfoot from '../assets/bigfoot.jpg'
 
 const SightingCard = ({ id, name, image, location }) => {
+
   return (
     <>
       <Link
-        to={`/singlesighting/${name}`}
+        to={`/singlesighting/${name}/${id}`}
         className='card' id={id}
       >
         <div className='name-container'>
