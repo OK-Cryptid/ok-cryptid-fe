@@ -3,8 +3,9 @@ import '../Styles/SingleCryptid.scss'
 import { NavigationContext } from '../Context/NavigationContext'
 import { ErrorContext } from '../Context/ErrorContext'
 import FootPrints from './FootPrints'
-import {gql, useQuery} from '@apollo/client'
-import { useParams } from 'react-router-dom'
+import { gql, useQuery } from '@apollo/client'
+import { Link } from 'react-router-dom'
+import { CryptidContext } from '../Context/CryptidContext'
 
 const GET_SINGLE_CRYPTID = gql`
   query GetCryptid($name: String!) {
@@ -19,12 +20,12 @@ const GET_SINGLE_CRYPTID = gql`
 `
 
 const SingleCryptid = () => {
-  const {name} = useParams()
+  const { cryptid } = useContext(CryptidContext)
   const { setClick } = useContext(NavigationContext)
   const { setError } = useContext(ErrorContext)
-  const {data, error, loading} = useQuery(GET_SINGLE_CRYPTID, {
+  const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
-      name: name
+      name: cryptid
     }
   })
 
@@ -49,9 +50,11 @@ const SingleCryptid = () => {
           <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
           <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName.dangerLevel}/10</span></p>
           <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
-          <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName.name}</button>
+          <Link to={`/singlecryptidsightings/${cryptid}`}>
+            <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName.name}</button>
+          </Link>
         </div>
-        <FootPrints/>
+        <FootPrints />
       </div>
     </div>
   )
