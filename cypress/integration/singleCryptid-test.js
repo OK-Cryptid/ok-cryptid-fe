@@ -10,11 +10,11 @@ describe('All sightings page cypress test', () => {
   });
 
   it('Should start on the home page and click on a cryptid', () => {
-    cy.get('\#\\31 0').click()
+    cy.get('.card-img').eq(0).click()
   })
 
   it('Should view the cryptids information page', () => {
-    cy.get('\#\\31 0').click()
+    cy.get('.card-img').eq(0).click()
     cy.get('.single-cryptid-photo')
     cy.get('.cryptid-details')
     cy.get('.cryptid-name')
