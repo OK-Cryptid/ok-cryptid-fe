@@ -63,9 +63,20 @@
 .cryptid-details{
   z-index: 1;
   width: 40vw;
-  height: 80vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.cryptid-description {
+  margin: 0 15%;
+  text-align: center;
+}
+
+.name-danger-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
