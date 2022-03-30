@@ -8,9 +8,19 @@ const CryptidCard = ({ id, name, image }) => {
 
   return (
     <>
-      <Link to={`/singlecryptid/${name}`} className='card' id={id} onClick={() => setCryptid(name)}>
-        <div className='name'>{name}</div>
-        <img src={image} alt='bigfoot' className='card-img' />
+      <Link
+        to={`/singlecryptid/${name}`} className='card'
+        id={id}
+        onClick={() => setCryptid(name)}
+      >
+        <div className='name-container'>
+          <div className='name'>{name}</div>
+        </div>
+        <img
+          src={image}
+          alt='bigfoot'
+          className='card-img'
+        />
       </Link>
     </>
   )

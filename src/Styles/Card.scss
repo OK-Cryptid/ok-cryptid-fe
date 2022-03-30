@@ -16,16 +16,33 @@
   @include button-hover
 }
 
-.name {
+// .name {
+//   color: $cream;
+//   font-family: $Marcellus;
+//   font-size: 4vh;
+//   text-shadow: -2px 5px 5px rgba(53,53,59,1);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%,-50%);
+// }
+
+.name-container {
   color: $cream;
   font-family: $Marcellus;
   font-size: 4vh;
   text-shadow: -2px 5px 5px rgba(53,53,59,1);
   position: absolute;
-  top: 50%;
+  bottom: 0%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -20%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20vw;
+  text-align: center;
 }
+
 
 .card-img {
   width: 95%;
