@@ -43,3 +43,21 @@
 .sightings-text {
   color: $cream;
 }
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  width: 12vw;
+  margin-top: .5%;
+}
+
+.dropdown-button {
+  @include cream-button;
+  border-radius: 0;
+}
+
+.dropdown-button:hover {
+  @include button-hover;
+}

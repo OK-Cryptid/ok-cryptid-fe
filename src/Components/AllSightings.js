@@ -27,7 +27,6 @@ const AllSightings = () => {
 
   useEffect(() => {
     setClick(true)
-    //setPageData(data)
   }, [])
 
   const toggleDisplay = () => {
@@ -49,7 +48,6 @@ const AllSightings = () => {
   const resetData = () => {
     toggleDisplay()
     setPageData(data.getCryptids)
-    console.log("pageData in resetData: ", pageData)
   }
 
   if (loading) return "Loading..."
@@ -57,9 +55,6 @@ const AllSightings = () => {
   if (!loading && !pageData) return setPageData(data.getCryptids)
 
   if (error) return setError(error)
-
-  // console.log("pageData: ", pageData)
-  // console.log("data line 61: ", data)
 
   const sightingCards = pageData.map(cryptid => {
     return cryptid.sightings.map(sighting => {
@@ -76,7 +71,14 @@ const AllSightings = () => {
 
   const dropDownButtons = data.getCryptids.map(cryptid => {
     return (
-      <button key={cryptid.id} id={cryptid.name} onClick={(event) => handleClick(event)}>{cryptid.name}</button>
+      <button
+        key={cryptid.id}
+        id={cryptid.name}
+        className='dropdown-button'
+        onClick={(event) => handleClick(event)}
+      >
+        {cryptid.name}
+      </button>
     )
   })
 
@@ -94,7 +96,12 @@ const AllSightings = () => {
             </button>
             {display &&
               <div className='dropdown-container'>
-                <button onClick={() => resetData()}>All Cryptid Sightings</button>
+                <button
+                  onClick={() => resetData()}
+                  className='dropdown-button'
+                >
+                  All Cryptid Sightings
+                </button>
                 {dropDownButtons}
               </div>
             }
@@ -111,7 +118,6 @@ const AllSightings = () => {
       <div className='all-sightings-container'>
         {pageData && sightingCards}
       </div>
-
     </>
   )
 }
