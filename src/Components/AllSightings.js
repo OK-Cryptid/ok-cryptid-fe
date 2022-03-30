@@ -61,6 +61,7 @@ const AllSightings = () => {
       return (
         <SightingCard
           key={sighting.id}
+          id={sighting.id}
           location={sighting.location}
           image={sighting.image}
           name={cryptid.name}
