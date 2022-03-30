@@ -6,11 +6,19 @@ import bigfoot from '../assets/bigfoot.jpg'
 const SightingCard = ({ id, name, image, location }) => {
   return (
     <>
-      <Link to={`/singlesighting/${name}`} className='card' id={id}>
-        <div className='name'>{name}</div>
-        <div className='location'>{location}</div>
-        <img src={image} alt='bigfoot' className='card-img' />
-
+      <Link
+        to={`/singlesighting/${name}`}
+        className='card' id={id}
+      >
+        <div className='name-container'>
+          <div className='name'>{name}</div>
+          <div className='location'>{location}</div>
+        </div>
+        <img
+          src={image}
+          alt='bigfoot'
+          className='card-img'
+        />
       </Link>
     </>
   )

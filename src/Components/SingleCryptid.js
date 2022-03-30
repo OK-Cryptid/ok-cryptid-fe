@@ -47,8 +47,10 @@ const SingleCryptid = () => {
       </div>
       <div className='cryptid-info-container'>
         <div className='cryptid-details'>
-          <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
-          <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName.dangerLevel}/10</span></p>
+          <div className='name-danger-container'>
+            <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
+            <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName.dangerLevel}/10</span></p>
+          </div>
           <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
           <Link to={`/singlecryptidsightings/${cryptid}`}>
             <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName.name}</button>
