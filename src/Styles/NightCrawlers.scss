@@ -10,8 +10,8 @@
 }
 
 .night-crawler {
-width: 20vw;
-height: 25vh;
+  width: 20vw;
+  height: 25vh;
 }
 
 .head {
@@ -48,10 +48,6 @@ height: 25vh;
   height: 40%;
 }
 
-
-@keyframes walkanim {
-  to { background-position: 100% 0; }
-}
 @keyframes stroll {
   from { transform: translateX(-100%); }
   to { transform: translateX(500%); }
