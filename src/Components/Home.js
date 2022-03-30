@@ -43,6 +43,7 @@ const Home = () => {
 
   return (
     <>
+    <NightCrawlers/>
     <div className='home-message-container'>
       <p className='home-message'>
         Ok Cryptid is here to help you have your very own cryptid encounter! We’ll help you identify the trails where you are  mostly likely to cross paths with your favorite cryptid!
@@ -51,7 +52,6 @@ const Home = () => {
     <div className='home-card-container'>
       {cryptidCards}
     </div>
-    <NightCrawlers/>
     </>
   )
 }
