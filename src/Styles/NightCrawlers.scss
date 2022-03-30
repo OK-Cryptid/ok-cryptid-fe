@@ -1,0 +1,189 @@
+// .walking-container {
+//   display: inline-block;
+// 	position: relative;
+// 	width: 20%;
+// 	padding-bottom: 30%;
+// 	vertical-align: middle;
+// 	overflow: hidden;
+//   animation: stroll 30s linear infinite;
+// }
+
+.night-crawler-container {
+border-color: yellow;
+width: 20vw;
+height: 25vh;
+}
+
+.head {
+  background-color: white;
+  height: 2vw;
+  width: 2vw;
+  border-radius: 50%;
+  transform: translate(26px, -119px)
+}
+
+.body {
+  background-color: white;
+  height: 7vw;
+  width: 3vw;
+  border-radius: 50%;
+  transform: translate(15px, -119px)
+}
+
+.leg-one {
+  display: absolute;
+  transform: translate(11px, -135px);
+}
+
+.leg-two {
+  display: absolute;
+    transform: translate(48px, -240px);
+}
+
+.one-top {
+  background-color: white;
+  height: 8vw;
+  width: .5vw;
+  border-radius: 50%;
+  transform: rotate(17deg)
+}
+
+// .one-bottom {
+//   background-color: white;
+//   height: 3vw;
+//   width: .5vw;
+//   border-radius: 50%;
+//   transform: rotate(45deg)
+// }
+
+.two-top {
+  background-color: white;
+  height: 8vw;
+  width: .5vw;
+  border-radius: 50%;
+  transform: rotate(-15deg)
+}
+
+// .two-bottom {
+//   background-color: white;
+//   height: 3vw;
+//   width: .5vw;
+//   border-radius: 50%;
+//   transform: rotate(25deg)
+// }
+
+
+
+.night-crawler {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-image: url('../assets/night-crawler.svg');
+  // background-repeat: no-repeat;
+  // background-size: 800%;
+  // animation: walkanim .5s infinite steps(7);
+}
+
+
+@keyframes walkanim {
+  to { background-position: 100% 0; }
+}
+@keyframes stroll {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(500%); }
+}
+
+// #walk {
+// 	display: inline-block;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/walk-sequence.svg);
+//   background-repeat: no-repeat;
+//   background-size: 800%;
+//   animation: walkanim 1s infinite steps(7);
+// }
+
+@keyframes slide-right {
+  0% {
+    transform:translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform:translateX(-50%);
+    opacity: .5;
+  }
+}
+
+// .one {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .two {
+//   position: absolute;
+//     height: 15vh;
+// }
+// .three {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .four {
+//   position: absolute;
+//     height: 15vh;
+// }
+// .five {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .six {
+//   position: absolute;
+//     height: 15vh;
+// }
+//
+// .seven {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .eight {
+//   position: absolute;
+//     height: 15vh;
+// }
+//
+// .nine {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .ten {
+//   position: absolute;
+//     height: 15vh;
+// }
+//
+// .eleven {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .thirteen {
+//   position: absolute;
+//     height: 15vh;
+// }
+//
+// .fourteen {
+//   position: absolute;
+//   height: 15vh;
+// }
+//
+// .fifteen {
+//   position: absolute;
+//     height: 15vh;
+// }

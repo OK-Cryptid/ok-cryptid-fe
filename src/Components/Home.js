@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from 'react'
 import { NavigationContext } from '../Context/NavigationContext'
 import { ErrorContext } from '../Context/ErrorContext'
 import { useQuery, gql } from "@apollo/client"
+import NightCrawlers from './NightCrawlers.js'
 
 const GET_CRYPTIDS = gql`
     query GetCryptids {
@@ -42,14 +43,15 @@ const Home = () => {
 
   return (
     <>
-      <div className='home-message-container'>
-        <p className='home-message'>
-          Ok Cryptid is here to help you have your very own cryptid encounter! We’ll help you identify the trails where you are  mostly likely to cross paths with your favorite cryptid!
-        </p>
-      </div>
-      <div className='home-card-container'>
-        {cryptidCards}
-      </div>
+    <div className='home-message-container'>
+      <p className='home-message'>
+        Ok Cryptid is here to help you have your very own cryptid encounter! We’ll help you identify the trails where you are  mostly likely to cross paths with your favorite cryptid!
+      </p>
+    </div>
+    <div className='home-card-container'>
+      {cryptidCards}
+    </div>
+    <NightCrawlers/>
     </>
   )
 }
