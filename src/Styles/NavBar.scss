@@ -43,6 +43,10 @@
     font-family: $Nova;
     text-shadow: -2px 5px 5px rgba(53,53,59,0.59);
     margin-right: 2vw;
+
+    &:hover {
+      cursor: pointer;
+    }
 }
 
 .gold-bottom-boarder {
