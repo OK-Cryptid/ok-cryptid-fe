@@ -41,7 +41,7 @@ const SingleCryptidSightings = () => {
   }
   console.log(data)
 
-  const sightingCards = data.cryptidByName.sightings.map(sighting => {
+  const sightingCards = data.cryptidByName[0].sightings.map(sighting => {
     return (
       <SightingCard
         key={sighting.id}
