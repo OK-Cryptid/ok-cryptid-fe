@@ -58,6 +58,9 @@ const SingleSighting = () => {
           <p className='sighting-title'>{data.sightingById.title}</p>
           <p className='sighting-location'>Location: {data.sightingById.location}</p>
           <p className='sighting-description'>{data.sightingById.description}</p>
+          <div class="arrow">
+            <span></span>
+          </div>
           <p className='near-text'>Nearby Trails:</p>
           <div className='trails-container'>
             {trailLinks}
