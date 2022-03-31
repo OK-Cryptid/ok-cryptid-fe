@@ -29,6 +29,8 @@ const SingleCryptid = () => {
     }
   })
 
+  console.log(loading, data, error)
+
   useEffect(() => {
     setClick(false)
   }, [])
@@ -43,17 +45,17 @@ const SingleCryptid = () => {
   return (
     <div className='single-cryptid-container'>
       <div className='cryptid-img-container'>
-        <img src={data.cryptidByName.image} alt='bigfoot' className='single-cryptid-photo' />
+        <img src={data.cryptidByName[0].image} alt='bigfoot' className='single-cryptid-photo' />
       </div>
       <div className='cryptid-info-container'>
         <div className='cryptid-details'>
           <div className='name-danger-container'>
-            <h1 className='cryptid-name'>{data.cryptidByName.name}</h1>
-            <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName.dangerLevel}/10</span></p>
+            <h1 className='cryptid-name'>{data.cryptidByName[0].name}</h1>
+            <p className='cryptid-danger'>Danger Level: <span className='gold-container'>{data.cryptidByName[0].dangerLevel}/10</span></p>
           </div>
-          <p className='cryptid-description'>Description: {data.cryptidByName.description}</p>
+          <p className='cryptid-description'>Description: {data.cryptidByName[0].description}</p>
           <Link to={`/singlecryptidsightings/${cryptid}`}>
-            <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName.name}</button>
+            <button className='cryptid-button-sightings'>Sightings of {data.cryptidByName[0].name}</button>
           </Link>
         </div>
         <FootPrints />
