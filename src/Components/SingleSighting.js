@@ -33,6 +33,7 @@ const SingleSighting = () => {
 
   useEffect(() => {
     setClick(false)
+    isOverflown()
   }, [])
 
   if (loading) return "Loading..."
@@ -47,14 +48,8 @@ const SingleSighting = () => {
     )
   })
 
-  // let sightingDescription;
-
-  console.log('sightingDescription:', sightingDescription)
-
-
   const isOverflown = () => {
     const current = sightingDescription.current
-    console.log('isOverFlown:', current)
     const overflow = current.scrollHeight > current.clientHeight || current.scrollWidth > current.clientWidth;
     if (overflow) {
       setOverflown(true)
@@ -73,7 +68,7 @@ const SingleSighting = () => {
         <div className='sighting-details'>
           <p className='sighting-title'>{data.sightingById.title}</p>
           <p className='sighting-location'>Location: {data.sightingById.location}</p>
-          <p ref={sightingDescription} id='sightingDescription' className='sighting-description' onScroll={isOverflown}>{data.sightingById.description}</p>
+          <p ref={sightingDescription} id='sightingDescription' className='sighting-description'>{data.sightingById.description}</p>
           {overflown && < div className="arrow">
             <span></span>
           </div>}
