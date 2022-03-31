@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import '../Styles/SingleSighting.scss'
 import { NavigationContext } from '../Context/NavigationContext'
 import FootPrints from './FootPrints'
-import {gql, useQuery} from '@apollo/client'
+import { gql, useQuery } from '@apollo/client'
 import { ErrorContext } from '../Context/ErrorContext'
 
 const GET_SINGLE_SIGHTING = gql`
@@ -39,7 +39,7 @@ const SingleSighting = () => {
 
   const trailLinks = data.sightingById.trailLinks.map((link, index) => {
     return (
-       <a href={link} key={index} target='_blank'>Trail {index +1}</a>
+      <a className='trail-links' href={link} key={index} target='_blank'>Trail {index + 1}</a>
     )
   })
 
@@ -52,16 +52,16 @@ const SingleSighting = () => {
         </div>
       </div>
       <div className='sighting-info-container'>
-      <div className='sighting-details'>
-        <p className='sighting-title'>{data.sightingById.title}</p>
-        <p className='sighting-location'>Location: {data.sightingById.location}</p>
-        <p className='sighting-description'>{data.sightingById.description}</p>
-        <p className='near-text'>Nearby Trails:</p>
+        <div className='sighting-details'>
+          <p className='sighting-title'>{data.sightingById.title}</p>
+          <p className='sighting-location'>Location: {data.sightingById.location}</p>
+          <p className='sighting-description'>{data.sightingById.description}</p>
+          <p className='near-text'>Nearby Trails:</p>
           <div className='trails-container'>
             {trailLinks}
           </div>
         </div>
-        <FootPrints/>
+        <FootPrints />
       </div>
     </div>
   )
