@@ -1,4 +1,4 @@
-
+//~~~~~~~~~~big-crawler~~~~~~~~~~~
 .crawlers-container {
   z-index: -1;
 }
@@ -46,6 +46,8 @@
   width: 100%;
   height: 40%;
 }
+
+//~~~~~~~~~~crawler-keyframes~~~~~~~~~~~
 
 @keyframes stroll {
   from { transform: translateX(-100%); }
@@ -175,6 +177,8 @@
   width: 100%;
   height: 40%;
 }
+
+//~~~~~~~~~~little-crawler-keyframes~~~~~~~~~~~
 
 @keyframes little-stroll {
   from { transform: translateX(-200%); }
