@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import '../Styles/SingleSighting.scss'
 import { NavigationContext } from '../Context/NavigationContext'
@@ -21,6 +21,8 @@ const GET_SINGLE_SIGHTING = gql`
 const SingleSighting = () => {
   const { setClick } = useContext(NavigationContext)
   const { setError } = useContext(ErrorContext)
+  const sightingDescription = useRef(null)
+  const [overflown, setOverflown] = useState(false)
   const id = parseInt(useParams().id)
   const name = useParams().name
   const { data, loading, error } = useQuery(GET_SINGLE_SIGHTING, {
@@ -45,6 +47,20 @@ const SingleSighting = () => {
     )
   })
 
+  // let sightingDescription;
+
+  console.log('sightingDescription:', sightingDescription)
+
+
+  const isOverflown = () => {
+    const current = sightingDescription.current
+    console.log('isOverFlown:', current)
+    const overflow = current.scrollHeight > current.clientHeight || current.scrollWidth > current.clientWidth;
+    if (overflow) {
+      setOverflown(true)
+    }
+  }
+
   return (
     <div className='single-sighting-container'>
       <div className='sighting-img-container'>
@@ -57,10 +73,10 @@ const SingleSighting = () => {
         <div className='sighting-details'>
           <p className='sighting-title'>{data.sightingById.title}</p>
           <p className='sighting-location'>Location: {data.sightingById.location}</p>
-          <p className='sighting-description'>{data.sightingById.description}</p>
-          <div class="arrow">
+          <p ref={sightingDescription} id='sightingDescription' className='sighting-description' onScroll={isOverflown}>{data.sightingById.description}</p>
+          {overflown && < div className="arrow">
             <span></span>
-          </div>
+          </div>}
           <p className='near-text'>Nearby Trails:</p>
           <div className='trails-container'>
             {trailLinks}
@@ -68,7 +84,7 @@ const SingleSighting = () => {
         </div>
         <FootPrints />
       </div>
-    </div>
+    </div >
   )
 }
 
