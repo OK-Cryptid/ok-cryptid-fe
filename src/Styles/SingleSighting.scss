@@ -67,6 +67,7 @@
   align-items: center;
   justify-content: space-around;
   font-size: .8em;
+  margin-bottom: 2vh;
 }
 
 .sighting-title {
@@ -83,9 +84,9 @@
   margin: 0 15%;
   text-align: center;
   overflow-y: scroll;
-  max-height: 30vh;
-  border: 1px solid $green;
-  border-radius: 3%;
+  max-height: 25vh;
+  //border: 1px solid $green;
+  // border-radius: 3%;
   padding: 2%;
 }
 
@@ -96,9 +97,9 @@
     width: 1vw;
 }
 
-// .sighting-description::-webkit-scrollbar:horizontal {
-//     height: 1vh;
-// }
+.sighting-description::-webkit-scrollbar:horizontal {
+    height: .5vh;
+}
 
 .sighting-description::-webkit-scrollbar-thumb {
     border-radius: 8px;
@@ -113,6 +114,10 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 2vh;
+}
+.near-text {
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .trail-links {
