@@ -58,18 +58,52 @@
   font-size: 3vh;
 }
 
+.sighting-details {
+  z-index: 1;
+  width: 40vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: .8em;
+}
+
 .sighting-title {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 5vh;
   margin-bottom: 0;
-
+  text-align: center;
+  padding-right: 2vw;
+  padding-left: 2vw;
 }
 
 .sighting-description {
   margin: 0 15%;
   text-align: center;
   overflow-y: scroll;
+  max-height: 30vh;
+  border: 1px solid $green;
+  border-radius: 5%;
+  padding: 2%;
+}
+
+.sighting-description::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.sighting-description::-webkit-scrollbar:vertical {
+    width: 1vw;
+}
+
+// .sighting-description::-webkit-scrollbar:horizontal {
+//     height: 1vh;
+// }
+
+.sighting-description::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid $green; /* should match background, can't be transparent */
+    background-color: $cream;
 }
 
 .trails-container {
@@ -83,18 +117,12 @@
 
 .trail-links {
   margin-bottom: 1.5vh;
+  text-decoration: none;
+  color: #000000;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 }
 
-.near-text {
-  margin-bottom: 0;
-}
-
-.sighting-details {
-  z-index: 1;
-  width: 40vw;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
