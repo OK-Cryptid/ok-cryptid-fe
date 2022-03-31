@@ -39,7 +39,9 @@ const SingleSighting = () => {
 
   const trailLinks = data.sightingById.trailLinks.map((link, index) => {
     return (
-      <a className='trail-links' href={link} key={index} target='_blank'>Trail {index + 1}</a>
+      <div className='trail-link-box'>
+        <a className='trail-links' href={link} key={index} target='_blank'>Trail {index + 1}</a>
+      </div>
     )
   })
 
@@ -56,8 +58,8 @@ const SingleSighting = () => {
           <p className='sighting-title'>{data.sightingById.title}</p>
           <p className='sighting-location'>Location: {data.sightingById.location}</p>
           <p className='sighting-description'>{data.sightingById.description}</p>
+          <p className='near-text'>Nearby Trails:</p>
           <div className='trails-container'>
-            <p className='near-text'>Nearby Trails:</p>
             {trailLinks}
           </div>
         </div>
