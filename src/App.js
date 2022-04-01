@@ -8,13 +8,11 @@ import SingleSighting from './Components/SingleSighting'
 import NavBar from './Components/NavBar';
 import ErrorModal from './Components/ErrorModal'
 import { NavigationProvider } from './Context/NavigationContext';
-import { ErrorProvider } from './Context/ErrorContext'
 import { CryptidProvider } from './Context/CryptidContext';
 import SingleCryptidSightings from './Components/SingleCryptidSightings';
 
 const App = () => {
   return (
-    <ErrorProvider>
       <NavigationProvider>
         <CryptidProvider>
           <NavBar />
@@ -28,7 +26,6 @@ const App = () => {
           </Routes>
         </CryptidProvider>
       </NavigationProvider>
-    </ErrorProvider>
   );
 }
 

@@ -4,8 +4,8 @@ import '../Styles/SingleSighting.scss'
 import { NavigationContext } from '../Context/NavigationContext'
 import FootPrints from './FootPrints'
 import { gql, useQuery } from '@apollo/client'
-import { ErrorContext } from '../Context/ErrorContext'
 import Loading from './Loading.js'
+import ErrorModal from './ErrorModal'
 
 const GET_SINGLE_SIGHTING = gql`
   query GetSighting($id: ID!) {
@@ -21,7 +21,6 @@ const GET_SINGLE_SIGHTING = gql`
 
 const SingleSighting = () => {
   const { setClick } = useContext(NavigationContext)
-  const { setError } = useContext(ErrorContext)
   const sightingDescription = useRef(null)
   const [overflown, setOverflown] = useState(false)
   const id = parseInt(useParams().id)
@@ -31,7 +30,6 @@ const SingleSighting = () => {
       id: id
     }
   })
-
 
   useEffect(() => {
     setClick(false)
@@ -48,8 +46,8 @@ const SingleSighting = () => {
   }, [sightingDescription])
 
   if (loading) return <Loading/>
-
-  if (error) return setError(error)
+    
+  if (error) return <ErrorModal gqlError={error}/>
 
   const trailLinks = data.sightingById.trailLinks.map((link, index) => {
     return (
@@ -59,14 +57,12 @@ const SingleSighting = () => {
     )
   })
 
-
   const onScroll = () => {
     const current = sightingDescription.current
     if (!hasOverflow(current)) {
       setOverflown(false)
     }
   }
-
 
   return (
     <div className='single-sighting-container'>

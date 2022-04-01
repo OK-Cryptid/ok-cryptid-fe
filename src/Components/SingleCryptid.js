@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from 'react'
 import '../Styles/SingleCryptid.scss'
 import { NavigationContext } from '../Context/NavigationContext'
-import { ErrorContext } from '../Context/ErrorContext'
 import FootPrints from './FootPrints'
 import { gql, useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
 import { CryptidContext } from '../Context/CryptidContext'
 import Loading from './Loading.js'
+import ErrorModal from './ErrorModal'
 
 const GET_SINGLE_CRYPTID = gql`
   query GetCryptid($name: String!) {
@@ -23,7 +23,6 @@ const GET_SINGLE_CRYPTID = gql`
 const SingleCryptid = () => {
   const { cryptid } = useContext(CryptidContext)
   const { setClick } = useContext(NavigationContext)
-  const { setError } = useContext(ErrorContext)
   const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
       name: cryptid
@@ -36,10 +35,8 @@ const SingleCryptid = () => {
 
 
   if (loading) return <Loading/>
-
-  if (error) {
-    setError(error)
-  }
+    
+  if (error) return <ErrorModal gqlError={error}/>
 
   return (
     <div className='single-cryptid-container'>

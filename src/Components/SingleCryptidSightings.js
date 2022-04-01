@@ -1,9 +1,9 @@
 import '../Styles/AllSightings.scss';
 import SightingCard from './SightingCard';
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CryptidContext } from '../Context/CryptidContext';
 import { useQuery, gql } from '@apollo/client';
-import { ErrorContext } from '../Context/ErrorContext'
+import ErrorModal from './ErrorModal';
 
 const GET_SINGLE_CRYPTID = gql`
   query GetCryptid($name: String!) {
@@ -18,26 +18,16 @@ const GET_SINGLE_CRYPTID = gql`
 `
 
 const SingleCryptidSightings = () => {
-  const [display, setDisplay] = useState(false)
-  const { setError } = useContext(ErrorContext)
-  const { cryptid, setCryptid } = useContext(CryptidContext)
+  const { cryptid } = useContext(CryptidContext)
   const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
       name: cryptid
     }
   })
 
-  const clearCryptid = () => {
-    setCryptid()
-  }
-  const toggleDisplay = () => {
-    setDisplay(!display)
-  }
   if (loading) return "Loading..."
 
-  if (error) {
-    return setError(error)
-  }
+  if (error) return <ErrorModal gqlError={error}/>
 
   const sightingCards = data.cryptidByName[0].sightings.map(sighting => {
     console.log(sighting)
@@ -49,8 +39,6 @@ const SingleCryptidSightings = () => {
         location={sighting.location}
         image={sighting.image}
       />
-
-
     )
   })
 
