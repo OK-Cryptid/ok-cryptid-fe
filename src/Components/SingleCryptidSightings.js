@@ -21,7 +21,6 @@ const SingleCryptidSightings = () => {
   const [display, setDisplay] = useState(false)
   const { setError } = useContext(ErrorContext)
   const { cryptid, setCryptid } = useContext(CryptidContext)
-  console.log("cryptid: ", cryptid)
   const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
       name: cryptid
@@ -39,12 +38,14 @@ const SingleCryptidSightings = () => {
   if (error) {
     return setError(error)
   }
-  console.log(data)
 
   const sightingCards = data.cryptidByName[0].sightings.map(sighting => {
+    console.log(sighting)
     return (
       <SightingCard
         key={sighting.id}
+        id={sighting.id}
+        name={cryptid}
         location={sighting.location}
         image={sighting.image}
       />
@@ -58,28 +59,6 @@ const SingleCryptidSightings = () => {
     <>
       <div className='sightings-header'>
         <h1 className='sightings-text'>{cryptid} Sightings</h1>
-        {/* <div className='search-container'>
-          <div>
-            <button
-              className='cryptid-button'
-              onClick={toggleDisplay}
-            >
-              Search by Cryptids
-            </button>
-            {display &&
-              <div className='dropdown-container'>
-                <p>things go here</p>
-              </div>
-            }
-          </div>
-          <form>
-            <input
-              className='zipcode-input'
-              type="text"
-              placeholder="Search by Zipcode"
-            />
-          </form> */}
-        {/* </div> */}
       </div>
       <div className='all-sightings-container'>
         {sightingCards}
