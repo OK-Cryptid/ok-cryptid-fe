@@ -2,9 +2,9 @@ import '../Styles/AllSightings.scss';
 import SightingCard from './SightingCard';
 import React, { useState, useContext, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { ErrorContext } from '../Context/ErrorContext'
 import { NavigationContext } from '../Context/NavigationContext'
 import Loading from './Loading.js'
+import ErrorModal from './ErrorModal';
 
 const GET_ALL_SIGHTINGS = gql`
   query GetAllSightings{
@@ -23,7 +23,6 @@ const AllSightings = () => {
   const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
   const [display, setDisplay] = useState(false)
   const [pageData, setPageData] = useState(null)
-  const { setError } = useContext(ErrorContext)
   const { setClick } = useContext(NavigationContext)
 
   useEffect(() => {
@@ -52,10 +51,10 @@ const AllSightings = () => {
   }
 
   if (loading) return <Loading/>
+  
+  if (error) return <ErrorModal gqlError={error}/>
 
   if (!loading && !pageData) return setPageData(data.getCryptids)
-
-  if (error) return setError(error)
 
   const sightingCards = pageData.map(cryptid => {
     return cryptid.sightings.map(sighting => {

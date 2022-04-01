@@ -1,10 +1,13 @@
-import React, {useContext} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
-import {ErrorContext} from '../Context/ErrorContext'
 import '../Styles/ErrorModal.scss';
 
-const ErrorModal = () => {
-  const {error, setError} = useContext(ErrorContext)
+const ErrorModal = ({ gqlError }) => {
+  const [error, setError] = useState()
+
+  useEffect(() => {
+    setError(gqlError)
+  }, [gqlError])
 
   const clearError = () => {
     setError()
@@ -15,11 +18,11 @@ const ErrorModal = () => {
     {error &&
       <div className='error-modal'>
         <div className='modal-content'>
-          <p className='error-message'>{error}</p>
-            <button className='error-button'
+          <p className='error-message'>{error.message}</p>
+            <Link to='/' className='error-button'
               onClick={clearError}
             >close
-            </button>
+            </Link>
         </div>
       </div>
     }
