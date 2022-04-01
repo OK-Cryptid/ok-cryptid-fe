@@ -30,8 +30,6 @@ const SingleCryptid = () => {
     }
   })
 
-  console.log(loading, data, error)
-
   useEffect(() => {
     setClick(false)
   }, [])
