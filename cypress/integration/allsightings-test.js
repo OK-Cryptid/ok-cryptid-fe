@@ -27,7 +27,7 @@ describe('All sightings page cypress test', () => {
     cy.get('.sightings-button').click()
     cy.get('\#\\32').click()
     cy.get('.sighting-photo')
-    cy.get('.sighting-title').contains('Section A-17 Prototype Labs')
+    cy.get('.sighting-title').contains('Sector B Coolant Reserve')
     cy.get('.sighting-location').contains('Location:')
     cy.get('#sightingDescription')
   })
