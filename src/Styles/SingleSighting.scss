@@ -9,7 +9,7 @@
 }
 
 .sighting-img-container{
-  @include gold-gradient
+  @include gold-gradient;
   width: 40vw;
   height: 80vh;
   border-radius: 10px;
@@ -58,22 +58,6 @@
   font-size: 3vh;
 }
 
-.danger-container {
-  @include gold-gradient;
-  padding: .5vw .5vw;
-  border-radius: 3px;
-  box-shadow: 0px 2px 9px -1px rgba(0,0,0,.4);
-  text-shadow: 0px 1px 4px rgba(53,53,59,1);
-  color: $cream;
-  margin-left: 1vw;
-}
-
-.trails-container {
-  height: 40vh;
-  width: 35vw;
-  overflow-y: scroll;
-}
-
 .sighting-details {
   z-index: 1;
   width: 40vw;
@@ -82,30 +66,92 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  font-size: .8em;
+  margin-bottom: 2vh;
 }
 
-//// needs to go into the trail card scss file once we are generating cards :)>>>>>>>>>>>>
-.trail-card {
+.sighting-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 5vh;
+  margin-bottom: 0;
+  text-align: center;
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+
+.sighting-description {
+  margin: 0 12%;
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 25vh;
+  padding: 2%;
+}
+
+.trails-container {
+  width: 35vw;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 20vh;
-  width: 30vw;
-  margin-bottom: 1vh;
+  justify-content: center;
+  margin-bottom: 2vh;
+  overflow-x: scroll;
 }
 
-.gold-trail-container {
+.near-text {
+  font-weight: bolder;
+  font-size: larger;
+  margin-bottom: 0;
+}
+
+.trail-link-box {
   @include gold-gradient;
-  border-radius: 5px;
+  border-radius: 4px;
+  color: $cream;
+  margin: 2%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  padding: 1% 3%;
+  box-shadow: 0px 2px 9px -1px rgba(0,0,0,.4);
+  text-shadow: 0px 1px 4px rgba(53,53,59,1);
+
+  &:hover {
+    cursor: pointer;
+     transform: scale(1.2);
+  }
 }
 
-.trail-card-img {
-  border-radius: 5px;
+.trail-links {
+  margin-bottom: 1.5vh;
+  text-decoration: none;
+  color: $cream;
+  margin-top: .5vh;
 }
 
-.trail-details-container {
-  font-family: $Marcellus;
+
+.arrow{
+    transform: translate(-50%,-50%);
+}
+.arrow span{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-bottom: 5px solid $cream;
+    border-right: 5px solid $cream;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-5px,-5px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(5px,5px);
+    }
 }
