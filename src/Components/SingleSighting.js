@@ -5,6 +5,7 @@ import { NavigationContext } from '../Context/NavigationContext'
 import FootPrints from './FootPrints'
 import { gql, useQuery } from '@apollo/client'
 import { ErrorContext } from '../Context/ErrorContext'
+import Loading from './Loading.js'
 
 const GET_SINGLE_SIGHTING = gql`
   query GetSighting($id: ID!) {
@@ -46,7 +47,7 @@ const SingleSighting = () => {
     }
   }, [sightingDescription])
 
-  if (loading) return "Loading..."
+  if (loading) return <Loading/>
 
   if (error) return setError(error)
 
