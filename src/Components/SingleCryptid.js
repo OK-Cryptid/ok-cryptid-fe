@@ -6,6 +6,7 @@ import FootPrints from './FootPrints'
 import { gql, useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
 import { CryptidContext } from '../Context/CryptidContext'
+import Loading from './Loading.js'
 
 const GET_SINGLE_CRYPTID = gql`
   query GetCryptid($name: String!) {
@@ -36,7 +37,7 @@ const SingleCryptid = () => {
   }, [])
 
 
-  if (loading) return "Loading..."
+  if (loading) return <Loading/>
 
   if (error) {
     setError(error)

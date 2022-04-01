@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react'
 import head from '../assets/head.svg'
 import legOne from '../assets/leg-one.svg'
 import legTwo from '../assets/leg-two.svg'

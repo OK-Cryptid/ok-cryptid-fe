@@ -4,6 +4,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { ErrorContext } from '../Context/ErrorContext'
 import { NavigationContext } from '../Context/NavigationContext'
+import Loading from './Loading.js'
 
 const GET_ALL_SIGHTINGS = gql`
   query GetAllSightings{
@@ -50,7 +51,7 @@ const AllSightings = () => {
     setPageData(data.getCryptids)
   }
 
-  if (loading) return "Loading..."
+  if (loading) return <Loading/>
 
   if (!loading && !pageData) return setPageData(data.getCryptids)
 
