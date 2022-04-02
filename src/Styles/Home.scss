@@ -1,6 +1,37 @@
 @import "./_variables";
 @import "./_mixins";
 
+
+
+//~~~~~~~Mobile~~~~~~~
+@media only screen and (max-width: 991px) {
+
+  .home-card-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-message {
+    margin: 3vh 5vw;
+    text-align: center;
+  }
+}
+
+
+//~~~~~~~computer~~~~~~~
+@media only screen and (min-width: 992px) {
+
+  .home-card-container {
+    @include card-container;
+  }
+
+  .home-message {
+    margin: 8vh 5vw;
+    text-align: center;
+  }
+}
+
+
 .temp-photo {
   width: 80%;
 }
@@ -18,13 +49,4 @@
   display: flex;
   justify-content: center;
   font-size: 3.5vh;
-}
-
-.home-message {
-  margin: 8vh 5vw;
-  text-align: center;
-}
-
-.home-card-container {
-  @include card-container;
 }
