@@ -7,8 +7,7 @@
 @media only screen and (max-width: 991px) {
 
   .home-card-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-column
   }
 
   .home-message {
@@ -17,12 +16,10 @@
   }
 
   .home-message-container {
-    margin-top: 10vh;
     color: $cream;
     width: 100vw;
-    display: flex;
-    justify-content: center;
     font-size: 3.5vh;
+    @include flex-center
   }
 }
 

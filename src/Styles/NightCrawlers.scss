@@ -5,57 +5,192 @@
 
 //~~~~~~~Mobile~~~~~~~
 @media only screen and (max-width: 991px) {
+  .walking-container {
+    position:fixed;
+    width: 30%;
+    height: 25%;
+  	padding-bottom: 30%;
+  	vertical-align: middle;
+  	overflow: hidden;
+    animation: stroll 30s linear infinite;
+    opacity: 50%;
+  }
 
+  .head {
+    position: absolute;
+    top: 3%;
+    left: 45%;
+    height: 4.5vh;
+    filter: blur(.25rem);
+    animation: head 2s linear infinite;
+  }
+
+  .leg-one {
+    position: absolute;
+    height: 20vh;
+    top: 19%;
+    left: 39%;
+    filter: blur(.25rem);
+    animation: leg1 2s linear infinite;
+  }
+
+  .leg-two {
+    position: absolute;
+    height: 20vh;
+    top: 19%;
+    left: 45%;
+    ;filter: blur(.25rem);
+    animation: leg2 2s linear infinite;
+  }
+
+  .night-crawler {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+  }
+
+  //~~~~~~little-nightcrawler~~~~~~~
+
+  .little-walking-container {
+    position:fixed;
+    top: 19%;
+  	width: 20%;
+  	padding-bottom: 30%;
+  	vertical-align: middle;
+  	overflow: hidden;
+    animation: little-stroll 30s linear infinite;
+    opacity: 50%;
+  }
+
+  .little-head {
+    position: absolute;
+    bottom: 63%;
+    left: 50%;
+    height: 4.5vh;
+    filter: blur(.25rem);
+    animation: little-head 2s linear infinite;
+  }
+
+  .little-leg-one {
+    position: absolute;
+    height: 10vh;
+    bottom: 3%;
+    left: 39%;
+    filter: blur(.25rem);
+    animation: little-leg-one 1.5s linear infinite;
+  }
+
+  .little-leg-two {
+    position: absolute;
+    height: 10vh;
+    bottom: 3%;
+    left: 45%;
+    ;filter: blur(.25rem);
+    animation: little-leg-two 1.5s linear infinite;
+  }
+
+  .little-night-crawler {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 87%;
+  }
 }
 
 //~~~~~~~computer~~~~~~~
 @media only screen and (min-width: 992px) {
+  .walking-container {
+    position:fixed;
+  	width: 20%;
+  	padding-bottom: 30%;
+  	vertical-align: middle;
+  	overflow: hidden;
+    animation: stroll 30s linear infinite;
+    opacity: 50%;
+  }
 
+  .head {
+    position: absolute;
+    top: 3%;
+    left: 45%;
+    height: 4.5vh;
+    filter: blur(.25rem);
+    animation: head 2s linear infinite;
+  }
+
+  .leg-one {
+    position: absolute;
+    height: 20vh;
+    top: 19%;
+    left: 39%;
+    filter: blur(.25rem);
+    animation: leg1 2s linear infinite;
+  }
+
+  .leg-two {
+    position: absolute;
+    height: 20vh;
+    top: 19%;
+    left: 45%;
+    ;filter: blur(.25rem);
+    animation: leg2 2s linear infinite;
+  }
+
+  .night-crawler {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+  }
+
+  //~~~~~~little-nightcrawler~~~~~~~
+
+  .little-walking-container {
+    position:fixed;
+  	width: 20%;
+  	padding-bottom: 30%;
+  	vertical-align: middle;
+  	overflow: hidden;
+    animation: little-stroll 30s linear infinite;
+    opacity: 50%;
+  }
+
+  .little-head {
+    position: absolute;
+    bottom: 44%;
+    left: 43%;
+    height: 4.5vh;
+    filter: blur(.25rem);
+    animation: little-head 2s linear infinite;
+  }
+
+  .little-leg-one {
+    position: absolute;
+    height: 10vh;
+    bottom: 3%;
+    left: 39%;
+    filter: blur(.25rem);
+    animation: little-leg-one 1.5s linear infinite;
+  }
+
+  .little-leg-two {
+    position: absolute;
+    height: 10vh;
+    bottom: 3%;
+    left: 45%;
+    ;filter: blur(.25rem);
+    animation: little-leg-two 1.5s linear infinite;
+  }
+
+  .little-night-crawler {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+  }
 }
 
-.walking-container {
-  position:fixed;
-	width: 20%;
-	padding-bottom: 30%;
-	vertical-align: middle;
-	overflow: hidden;
-  animation: stroll 30s linear infinite;
-  opacity: 50%;
-}
-
-.head {
-  position: absolute;
-  top: 3%;
-  left: 45%;
-  height: 4.5vh;
-  filter: blur(.25rem);
-  animation: head 2s linear infinite;
-}
-
-.leg-one {
-  position: absolute;
-  height: 20vh;
-  top: 19%;
-  left: 39%;
-  filter: blur(.25rem);
-  animation: leg1 2s linear infinite;
-}
-
-.leg-two {
-  position: absolute;
-  height: 20vh;
-  top: 19%;
-  left: 45%;
-  ;filter: blur(.25rem);
-  animation: leg2 2s linear infinite;
-}
-
-.night-crawler {
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  height: 40%;
-}
 
 //~~~~~~~~~~crawler-keyframes~~~~~~~~~~~
 
@@ -136,56 +271,6 @@
 	100% {
     transform: rotate(0deg);
     }
-}
-
-//~~~~~~little-nightcrawler~~~~~~~
-
-.little-walking-container {
-  position:fixed;
-	width: 20%;
-	padding-bottom: 30%;
-	vertical-align: middle;
-	overflow: hidden;
-  animation-delay: 3s;
-  animation: little-stroll 30s linear infinite;
-  opacity: 50%;
-}
-
-.little-head {
-  position: absolute;
-  bottom: 44%;
-  left: 43%;
-  height: 4.5vh;
-  filter: blur(.25rem);
-  animation-delay: 3s;
-  animation: little-head 2s linear infinite;
-}
-
-.little-leg-one {
-  position: absolute;
-  height: 10vh;
-  bottom: 3%;
-  left: 39%;
-  filter: blur(.25rem);
-  animation-delay: 3s;
-  animation: little-leg-one 1.5s linear infinite;
-}
-
-.little-leg-two {
-  position: absolute;
-  height: 10vh;
-  bottom: 3%;
-  left: 45%;
-  ;filter: blur(.25rem);
-  animation-delay: 3s;
-  animation: little-leg-two 1.5s linear infinite;
-}
-
-.little-night-crawler {
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  height: 40%;
 }
 
 //~~~~~~~~~~little-crawler-keyframes~~~~~~~~~~~

@@ -3,80 +3,145 @@
 
 //~~~~~~~Mobile~~~~~~~
 @media only screen and (max-width: 991px) {
+  .loading {
+  }
 
+  .eyes-container {
+    opacity: .8;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+  }
+
+  .left-eye {
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    background-color: $cream;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    animation: blink 5s infinite;
+  }
+
+  .left-pupil {
+    position: absolute;
+    left: 40%;
+    top: 19%;
+    z-index: 1;
+    background-color: #726b6b;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    animation: left-pupil 2s linear infinite;
+  }
+
+  .right-eye {
+    position: absolute;
+    right: 40%;
+    top: 20%;
+    background-color: $cream;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    animation-delay: 3s;
+    animation: blink 6s infinite;
+  }
+
+  .right-pupil {
+    position: absolute;
+    left: 40%;
+    top: 19%;
+    z-index: 1;
+    background-color: #726b6b;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    animation: left-pupil 2s linear infinite;
+  }
+
+
+  .loading-text {
+    position: absolute;
+    left: 39%;
+    top: 42%;
+    color: $cream;
+    font-size: 80px;
+  	animation: loader 2s linear infinite
+  }
 }
 
 //~~~~~~~computer~~~~~~~
 @media only screen and (min-width: 992px) {
+  .loading {
+  }
 
+  .eyes-container {
+    opacity: .8;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+  }
+
+  .left-eye {
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    background-color: $cream;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    animation: blink 5s infinite;
+  }
+
+  .left-pupil {
+    position: absolute;
+    left: 40%;
+    top: 19%;
+    z-index: 1;
+    background-color: #726b6b;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    animation: left-pupil 2s linear infinite;
+  }
+
+  .right-eye {
+    position: absolute;
+    right: 40%;
+    top: 20%;
+    background-color: $cream;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    animation-delay: 3s;
+    animation: blink 6s infinite;
+  }
+
+  .right-pupil {
+    position: absolute;
+    left: 40%;
+    top: 19%;
+    z-index: 1;
+    background-color: #726b6b;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    animation: left-pupil 2s linear infinite;
+  }
+
+
+  .loading-text {
+    position: absolute;
+    left: 39%;
+    top: 42%;
+    color: $cream;
+    font-size: 80px;
+  	animation: loader 2s linear infinite
+  }
 }
 
-.loading {
-}
 
-.eyes-container {
-  opacity: .8;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-}
-
-.left-eye {
-  position: absolute;
-  left: 40%;
-  top: 20%;
-  background-color: $cream;
-  width: 5vw;
-  height: 5vw;
-  border-radius: 100%;
-  animation: blink 5s infinite;
-}
-
-.left-pupil {
-  position: absolute;
-  left: 40%;
-  top: 19%;
-  z-index: 1;
-  background-color: #726b6b;
-  width: 2vw;
-  height: 2vw;
-  border-radius: 50%;
-  animation: left-pupil 2s linear infinite;
-}
-
-.right-eye {
-  position: absolute;
-  right: 40%;
-  top: 20%;
-  background-color: $cream;
-  width: 5vw;
-  height: 5vw;
-  border-radius: 100%;
-  animation-delay: 3s;
-  animation: blink 6s infinite;
-}
-
-.right-pupil {
-  position: absolute;
-  left: 40%;
-  top: 19%;
-  z-index: 1;
-  background-color: #726b6b;
-  width: 2vw;
-  height: 2vw;
-  border-radius: 50%;
-  animation: left-pupil 2s linear infinite;
-}
-
-
-.loading-text {
-  position: absolute;
-  left: 39%;
-  top: 42%;
-  color: $cream;
-  font-size: 80px;
-	animation: loader 2s linear infinite
-}
 
 ///~~~~~~~keyframes~~~~~~~~~
 

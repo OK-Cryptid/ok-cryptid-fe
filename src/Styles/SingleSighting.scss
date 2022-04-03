@@ -4,10 +4,9 @@
 //~~~~~~~Mobile~~~~~~~
 @media only screen and (max-width: 991px){
   .single-sighting-container {
-    margin: 5vh 0;
+    margin-top: 2vh;
     display: flex;
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
@@ -16,7 +15,7 @@
   .sighting-img-container {
     @include gold-gradient;
     width: 90vw;
-    height: 80vh;
+    height: 40vh;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -30,13 +29,6 @@
     border-radius: 10px;
   }
 
-  .single-sighting-container {
-    margin-top: 5vh;
-    display: flex;
-    justify-content: space-around;
-    height: 80vh;
-  }
-
   .sighting-name-text {
     margin: 0;
   }
@@ -44,16 +36,17 @@
   .sighting-name-box {
     @include gold-gradient;
     border-radius: 4px;
-    position: fixed;
-    top: 20%;
+    position: absolute;
+    top: 48%;
     color: $cream;
     font-size: 5vh;
-    padding: 2vw 8vw;
+    padding: 1vw 4vw;
     box-shadow: 0px 2px 9px -1px rgba(0, 0, 0, 0.4);
     text-shadow: 0px 1px 4px rgba(53, 53, 59, 1);
   }
 
   .sighting-info-container {
+    margin-top: 2vh;
     width: 90vw;
     height: 80vh;
     background-color: $cream-opacity;

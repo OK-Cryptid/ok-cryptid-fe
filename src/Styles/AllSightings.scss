@@ -4,27 +4,54 @@
 
 //~~~~~~~Mobile~~~~~~~
 @media only screen and (max-width: 991px) {
+  .all-sightings-container {
+    @include flex-column;
+  }
+
+  .search-container {
+      display: flex;
+      margin: 2%;
+      width: 100%;
+      justify-content: space-around;
+  }
+
+  .sightings-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5vw;
+  }
 
 }
 
 //~~~~~~~computer~~~~~~~
 @media only screen and (min-width: 992px) {
+  .all-sightings-container {
+    @include card-container;
+  }
 
+  .sightings-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+    width: 40%;
+  }
+
+  .cryptid-button {
+    @include cream-button;
+    width: 12vw;
+    box-sizing: border-box;
+    height: 4vh;
+  }
 }
 
-.search-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 2%;
-  width: 40%;
-}
-
-.cryptid-button {
-  @include cream-button;
-  width: 12vw;
-  box-sizing: border-box;
-  height: 4vh;
-}
 
 .cryptid-button:hover {
   @include button-hover;
@@ -39,16 +66,6 @@
   padding: 7%;
   box-sizing: border-box;
   height: 4vh;
-}
-
-.all-sightings-container {
-  @include card-container;
-}
-
-.sightings-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5vw;
 }
 
 .sightings-text {

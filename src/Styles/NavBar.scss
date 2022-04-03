@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     box-shadow: 0px 14px 29px -1px rgba(0,0,0,0.65);
   }
 
@@ -21,11 +20,12 @@
   }
 
   .logo-link-container {
-    margin-top: 8vh;
+    width: 80%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 8vh;
     margin: 0 2vw;
-
   }
 
   .logo-link {
@@ -35,20 +35,19 @@
 
   .logo-text {
     color: $cream;
-    font-size: 6vh;
+    font-size: 3vh;
     text-decoration: none;
     text-shadow: -2px 5px 5px rgba(53,53,59,0.59);
   }
 
   .sightings-button {
     color: $cream;
-    font-size: 6vh;
+    font-size: 3vh;
     background: transparent;
     border: none;
     font-family: $Nova;
     text-shadow: -2px 5px 5px rgba(53,53,59,0.59);
     margin-right: 2vw;
-    @include gold-gradient;
     border-radius: 7px;
 
     &:hover {
