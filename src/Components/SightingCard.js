@@ -1,7 +1,6 @@
 import '../Styles/Card.scss';
 import React from 'react';
 import { Link } from 'react-router-dom'
-import bigfoot from '../assets/bigfoot.jpg'
 
 const SightingCard = ({ id, name, image, location }) => {
 

@@ -51,7 +51,7 @@ const SingleSighting = () => {
 
   const trailLinks = data.sightingById.trailLinks.map((link, index) => {
     return (
-      <a className='trail-links' href={link} key={index} target='_blank'>Trail {index + 1}</a>
+      <a className='trail-links' href={link} key={index} target='_blank' rel="noreferrer">Trail {index + 1}</a>
     )
   })
 
