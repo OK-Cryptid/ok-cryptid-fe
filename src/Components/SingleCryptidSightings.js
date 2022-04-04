@@ -1,9 +1,9 @@
 import '../Styles/AllSightings.scss';
 import SightingCard from './SightingCard';
-import React, { useContext } from 'react';
-import { CryptidContext } from '../Context/CryptidContext';
+import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import ErrorModal from './ErrorModal';
+import { useParams } from 'react-router-dom';
 
 const GET_SINGLE_CRYPTID = gql`
   query GetCryptid($name: String!) {
@@ -18,7 +18,7 @@ const GET_SINGLE_CRYPTID = gql`
 `
 
 const SingleCryptidSightings = () => {
-  const { cryptid } = useContext(CryptidContext)
+  const cryptid = useParams().name
   const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {
       name: cryptid

@@ -11,7 +11,7 @@ describe('All sightings page cypress test', () => {
   })
 
   it('Should view the cryptids information page', () => {
-    cy.get('.card-img').eq(0).click()
+    cy.get('.card-img').eq(1).click()
     cy.get('.single-cryptid-photo')
     cy.get('.cryptid-details')
     cy.get('.cryptid-name').contains('Bigfoot')

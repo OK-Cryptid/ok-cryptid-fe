@@ -3,8 +3,7 @@ import '../Styles/SingleCryptid.scss'
 import { NavigationContext } from '../Context/NavigationContext'
 import FootPrints from './FootPrints'
 import { gql, useQuery } from '@apollo/client'
-import { Link } from 'react-router-dom'
-import { CryptidContext } from '../Context/CryptidContext'
+import { Link, useParams } from 'react-router-dom'
 import Loading from './Loading.js'
 import ErrorModal from './ErrorModal'
 
@@ -21,7 +20,7 @@ const GET_SINGLE_CRYPTID = gql`
 `
 
 const SingleCryptid = () => {
-  const { cryptid } = useContext(CryptidContext)
+  const cryptid = useParams().name
   const { setClick } = useContext(NavigationContext)
   const { data, error, loading } = useQuery(GET_SINGLE_CRYPTID, {
     variables: {

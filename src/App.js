@@ -8,13 +8,11 @@ import SingleSighting from './Components/SingleSighting'
 import NavBar from './Components/NavBar';
 import ErrorModal from './Components/ErrorModal'
 import { NavigationProvider } from './Context/NavigationContext';
-import { CryptidProvider } from './Context/CryptidContext';
 import SingleCryptidSightings from './Components/SingleCryptidSightings';
 
 const App = () => {
   return (
       <NavigationProvider>
-        <CryptidProvider>
           <NavBar />
           <ErrorModal />
           <Routes>
@@ -24,7 +22,6 @@ const App = () => {
             <Route path="/singlesighting/:name/:id" element={<SingleSighting />} />
             <Route path="/singlecryptidsightings/:name" element={<SingleCryptidSightings />} />
           </Routes>
-        </CryptidProvider>
       </NavigationProvider>
   );
 }
