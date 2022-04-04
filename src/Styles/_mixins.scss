@@ -30,6 +30,16 @@
   opacity: 0.7;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 //~~~~~~~~~ keyframes ~~~~~~~~~~~
 
 @keyframes gradient {
