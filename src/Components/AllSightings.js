@@ -4,30 +4,40 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { NavigationContext } from '../Context/NavigationContext'
 import Loading from './Loading.js'
-import ErrorModal from './ErrorModal';
+import ErrorModal from './ErrorModal'
 
-const GET_ALL_SIGHTINGS = gql`
-  query GetAllSightings{
-    getCryptids{
-      name
-      sightings {
-        id
-        location
-        image
-      }
-    }
+
+const Search_Sightings = gql`
+query GetSightingsByLocation($location: String!){
+sightingByLocation(location: $location){
+		id
+    image
+    location
   }
+}
 `
 
 const AllSightings = () => {
-  const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
   const [display, setDisplay] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
   const [pageData, setPageData] = useState(null)
   const { setClick } = useContext(NavigationContext)
-
+  const { data, error, loading } = useQuery(Search_Sightings, {variables: {location: searchTerm}, fetchPolicy: "no-cache"})
+  
   useEffect(() => {
     setClick(true)
   }, [])
+
+  if (loading) return <Loading/>
+  
+  if (error) return <ErrorModal gqlError={error}/>
+
+  if (!loading && !pageData) return setPageData(data.sightingsByLocation)
+  
+  
+  const searchCryptids = (event) => {
+    setSearchTerm(event.target.value)
+  }
 
   const toggleDisplay = () => {
     setDisplay(!display)
@@ -39,46 +49,38 @@ const AllSightings = () => {
   }
 
   const filterSightings = (name) => {
-    const filteredSightings = data.getCryptids.filter(cryptid => {
-      return cryptid.name === name
+    const filteredSightings = data.sightingsByLocation.filter(sighting => {
+      return sighting.cryptid.name === name
     })
     setPageData(filteredSightings)
   }
 
   const resetData = () => {
     toggleDisplay()
-    setPageData(data.getCryptids)
+    setPageData(data.sightingsByLocation)
   }
 
-  if (loading) return <Loading/>
-  
-  if (error) return <ErrorModal gqlError={error}/>
-
-  if (!loading && !pageData) return setPageData(data.getCryptids)
-
-  const sightingCards = pageData.map(cryptid => {
-    return cryptid.sightings.map(sighting => {
+  const sightingCards = pageData.map(sighting => {
       return (
         <SightingCard
           key={sighting.id}
           id={sighting.id}
           location={sighting.location}
           image={sighting.image}
-          name={cryptid.name}
+          name={sighting.cryptid.name}
         />
       )
-    })
   })
-
-  const dropDownButtons = data.getCryptids.map(cryptid => {
+  console.log(data.sightingsByLocation)
+  const dropDownButtons = data.sightingsByLocation.map(sighting => {
     return (
       <button
-        key={cryptid.id}
-        id={cryptid.name}
+        key={sighting.cryptid.id}
+        id={sighting.cryptid.name}
         className='dropdown-button'
         onClick={(event) => handleClick(event)}
       >
-        {cryptid.name}
+        {sighting.cryptid.name}
       </button>
     )
   })
@@ -112,6 +114,7 @@ const AllSightings = () => {
               className='zipcode-input'
               type="text"
               placeholder="Search by Zipcode"
+              onChange={searchCryptids}
             />
           </form>
         </div>
