@@ -46,14 +46,12 @@ const SingleSighting = () => {
   }, [sightingDescription])
 
   if (loading) return <Loading/>
-    
+
   if (error) return <ErrorModal gqlError={error}/>
 
   const trailLinks = data.sightingById.trailLinks.map((link, index) => {
     return (
-      <div className='trail-link-box'>
-        <a className='trail-links' href={link} key={index} target='_blank'>Trail {index + 1}</a>
-      </div>
+      <a className='trail-links' href={link} key={index} target='_blank'>Trail {index + 1}</a>
     )
   })
 
