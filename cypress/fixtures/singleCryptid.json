@@ -1,0 +1,13 @@
+{
+  "data": {
+    "cryptidByName": [
+      {
+        "id": "1",
+        "name": "Bigfoot",
+        "image": "https://bit.ly/3JKsNDs",
+        "dangerLevel": "7",
+        "description": "Bigfoot, also called Sasquatch (from Salish se’sxac: “wild men”) is a large, hairy, humanlike creature described as ranging from 6 to 15 feet tall. It is observed standing on two feet, often giving off a foul smell, and moving silently or emitting a high-pitched cry. Footprints have measured up to 24 inches in width."
+      }
+    ]
+  }
+}

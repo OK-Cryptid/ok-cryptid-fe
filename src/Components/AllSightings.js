@@ -38,6 +38,7 @@ const AllSightings = () => {
     event.preventDefault()
     setPageData(null)
     setSearchTerm(event.target.value)
+    console.log(event.target.value)
   }
 
   const toggleDisplay = () => {

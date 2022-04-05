@@ -1,11 +1,22 @@
+import '../fixtures/singleCryptid.json'
 describe('All sightings page cypress test', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.intercept({
+      method: 'POST',
+      url: 'https://cryptic-garden-95478.herokuapp.com/graphiql',
+      headers: {
+        'x-gqpl-operation-name': 'GetCryptid'
+      }
+    },
+      {
+        fixture: 'singleCryptid.json'
+      })
+      cy.visit('http://localhost:3000')
   })
-  
 
-  it('Should start on the home page and click on a cryptid', () => {
+
+it('Should start on the home page and click on a cryptid', () => {
     cy.get('.home-message').contains('Ok Cryptid')
     cy.get('\#\\32').click()
   })
