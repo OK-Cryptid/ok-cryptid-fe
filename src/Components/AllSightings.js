@@ -106,9 +106,18 @@ const AllSightings = () => {
           </form>
         </div>
       </div>
-      <div className='all-sightings-container'>
-        {pageData.length ? sightingCards : <p className='no-sightings'>Cryptids have evaded being sighted at this location. Try another search.</p>}
-      </div>
+      {pageData.length &&
+				<div className='all-sightings-container'>
+					{sightingCards}
+      	</div>
+			}
+			{!pageData.length &&
+				<div className='no-sightings-container'>
+					<p className='no-sightings'>
+						Cryptids have evaded being sighted at this location. Try another search.
+					</p>
+				</div>
+			}
     </>
   )
 }

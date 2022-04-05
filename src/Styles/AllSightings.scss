@@ -109,6 +109,17 @@
   }
 }
 
+.no-sightings-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.no-sightings {
+  color: $cream;
+  text-align: center;
+  font-size: 3vh;
+}
 
 .cryptid-button:hover {
   @include button-hover;
@@ -124,14 +135,10 @@
 
 .dropdown-button {
   @include cream-button;
+  box-shadow: none;
   border-radius: 0;
 }
 
 .dropdown-button:hover {
   @include button-hover;
-}
-
-.no-sightings {
-  color: $cream;
-  text-align: center;
 }

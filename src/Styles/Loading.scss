@@ -3,9 +3,6 @@
 
 //~~~~~~~Mobile~~~~~~~
 @media only screen and (max-width: 991px) {
-  .loading {
-  }
-
   .eyes-container {
     opacity: .8;
     position: absolute;
@@ -58,23 +55,11 @@
     height: 2vw;
     border-radius: 50%;
     animation: left-pupil 2s linear infinite;
-  }
-
-
-  .loading-text {
-    position: absolute;
-    left: 39%;
-    top: 42%;
-    color: $cream;
-    font-size: 80px;
-  	animation: loader 2s linear infinite
   }
 }
 
 //~~~~~~~computer~~~~~~~
 @media only screen and (min-width: 992px) {
-  .loading {
-  }
 
   .eyes-container {
     opacity: .8;
@@ -131,22 +116,26 @@
   }
 
 
-  .loading-text {
-    position: absolute;
-    left: 39%;
-    top: 42%;
-    color: $cream;
-    font-size: 80px;
-  	animation: loader 2s linear infinite
-  }
 }
 
+.loading-text {
+  color: $cream;
+  font-size: 4vw;
+  animation: loader 2s linear infinite
+}
+
+.loading {
+  margin-top: 35vh;
+  display: flex;
+  justify-content: center;
+}
 
 
 ///~~~~~~~keyframes~~~~~~~~~
 
 @keyframes blink{
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1, .05);
     }
     5%,
