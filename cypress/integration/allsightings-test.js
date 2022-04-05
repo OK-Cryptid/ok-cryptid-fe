@@ -3,7 +3,7 @@ describe('All sightings page cypress test', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
   })
-  
+
   it('Should start on the home page and click sighting button', () => {
     cy.get('.logo')
     cy.get('.home-message').contains('Ok Cryptid')
@@ -11,7 +11,7 @@ describe('All sightings page cypress test', () => {
     cy.get('.sightings-button').click()
   })
 
-  it('Should display the Seach by Cryptids button and the search by zipcode', ()=> {
+  it('Should display the Seach by Cryptids button and the search by zipcode', () => {
     cy.get('.sightings-button').click()
     cy.get('.cryptid-button')
     cy.get('.zipcode-input')
@@ -27,7 +27,7 @@ describe('All sightings page cypress test', () => {
     cy.get('.sightings-button').click()
     cy.get('\#\\32').click()
     cy.get('.sighting-photo')
-    cy.get('.sighting-title').contains('2001-05-24')
+    cy.get('.sighting-title').contains('05-24-2001')
     cy.get('.sighting-location').contains('Location:')
     cy.get('#sightingDescription')
   })
