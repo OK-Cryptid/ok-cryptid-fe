@@ -79,38 +79,49 @@ const AllSightings = () => {
     )
   })
 
-  return (
-    <>
-      <div className='sightings-header'>
-        <h1 className='sightings-text'>All Sightings</h1>
-        <div className='search-container'>
-          <div>
-            <button
-              className='cryptid-button'
-              onClick={toggleDisplay}
-            >
-              Search by Cryptids
-            </button>
-            {display && <DropDownButtons handleClick={handleClick} resetData={resetData} />
-            }
-          </div>
-          <form>
-            <input
-              className='zipcode-input'
-              type='text'
-              placeholder='Search by State'
-              autoFocus={true}
-              value={searchTerm}
-              onChange={(event) => searchCryptids(event)}
-            />
-          </form>
-        </div>
-      </div>
-      <div className='all-sightings-container'>
-        {pageData.length ? sightingCards : <p className='no-sightings'>Cryptids have evaded being sighted at this location. Try another search.</p>}
-      </div>
-    </>
-  )
+	return( <Loading />)
+
+  // return (
+  //   <>
+  //     <div className='sightings-header'>
+  //       <h1 className='sightings-text'>All Sightings</h1>
+  //       <div className='search-container'>
+  //         <div>
+  //           <button
+  //             className='cryptid-button'
+  //             onClick={toggleDisplay}
+  //           >
+  //             Search by Cryptids
+  //           </button>
+  //           {display && <DropDownButtons handleClick={handleClick} resetData={resetData} />
+  //           }
+  //         </div>
+  //         <form>
+  //           <input
+  //             className='zipcode-input'
+  //             type='text'
+  //             placeholder='Search by State'
+  //             autoFocus={true}
+  //             value={searchTerm}
+  //             onChange={(event) => searchCryptids(event)}
+  //           />
+  //         </form>
+  //       </div>
+  //     </div>
+  //     {pageData.length &&
+	// 			<div className='all-sightings-container'>
+	// 				{sightingCards}
+  //     	</div>
+	// 		}
+	// 		{!pageData.length &&
+	// 			<div className='no-sightings-container'>
+	// 				<p className='no-sightings'>
+	// 					Cryptids have evaded being sighted at this location. Try another search.
+	// 				</p>
+	// 			</div>
+	// 		}
+  //   </>
+  // )
 }
 
 export default AllSightings;
