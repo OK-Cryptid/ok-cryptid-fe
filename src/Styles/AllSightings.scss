@@ -3,14 +3,14 @@
 
 
 //~~~~~~~Mobile~~~~~~~
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 982px) {
   .all-sightings-container {
     @include flex-column;
   }
 
   .search-container {
       display: flex;
-      margin: 2%;
+      margin: 4%;
       width: 100%;
       justify-content: space-around;
   }
@@ -25,9 +25,9 @@
 
   .cryptid-button {
     @include cream-button;
-    width: 24vw;
     box-sizing: border-box;
     height: 4vh;
+    padding: 0vw 3vw;
   }
 
   .zipcode-input {
@@ -37,15 +37,35 @@
     border-radius: 7px;
     box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
     border: none;
-    padding: 7%;
     box-sizing: border-box;
     height: 4vh;
-    width: 24vw;
+    text-align: center;
+  }
+
+  form {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh;
+  }
+
+  .sightings-text {
+    margin: 3vw;
+  }
+
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    margin-top: .5%;
+    padding: 0vw 1vw;
   }
 }
 
 //~~~~~~~computer~~~~~~~
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 983px) {
   .all-sightings-container {
     @include card-container;
   }
@@ -53,8 +73,8 @@
   .sightings-header {
     display: flex;
     justify-content: space-between;
-    padding: 0px 3vw;
     align-items: center;
+    margin: 2vw 3vw;
   }
 
   .search-container {
@@ -77,9 +97,22 @@
     border-radius: 7px;
     box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
     border: none;
-    padding: 7%;
+    padding: 0% 7%;
     box-sizing: border-box;
     height: 4vh;
+  }
+
+  .sightings-text {
+    margin: 0vw;
+  }
+
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    width: 12vw;
+    margin-top: .5%;
   }
 }
 
@@ -94,15 +127,6 @@
 
 .sightings-text {
   color: $cream;
-}
-
-.dropdown-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: 1;
-  width: 12vw;
-  margin-top: .5%;
 }
 
 .dropdown-button {
