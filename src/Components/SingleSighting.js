@@ -45,9 +45,9 @@ const SingleSighting = () => {
     }
   }, [sightingDescription])
 
-  if (loading) return <Loading/>
+  if (loading) return <Loading />
 
-  if (error) return <ErrorModal gqlError={error}/>
+  if (error) return <ErrorModal gqlError={error} />
 
   const trailLinks = data.sightingById.trailLinks.map((link, index) => {
     return (
@@ -62,6 +62,11 @@ const SingleSighting = () => {
     }
   }
 
+  const formatDate = (date) => {
+    let [year, month, day] = date.split('-');
+    return [month, day, year].join('-');
+  }
+
   return (
     <div className='single-sighting-container'>
       <div className='sighting-img-container'>
@@ -72,7 +77,7 @@ const SingleSighting = () => {
       </div>
       <div className='sighting-info-container'>
         <div className='sighting-details'>
-          <p className='sighting-title'>{data.sightingById.title}</p>
+          <p className='sighting-title'>{formatDate(data.sightingById.title)}</p>
           <p className='sighting-location'>Location: {data.sightingById.location}</p>
           <p ref={sightingDescription} id='sightingDescription' className='sighting-description'
             onScroll={onScroll}
