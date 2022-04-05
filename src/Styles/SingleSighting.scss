@@ -4,22 +4,12 @@
 //~~~~~~~Mobile~~~~~~~
 @media only screen and (max-width: 991px){
   .single-sighting-container {
-    margin-top: 2vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
+    @include single-container-mobile
   }
 
   .sighting-img-container {
     @include gold-gradient;
-    width: 90vw;
-    height: 40vh;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include single-img-mobile;
   }
 
   .sighting-photo {
@@ -46,29 +36,11 @@
   }
 
   .sighting-info-container {
-    margin-top: 2vh;
-    width: 90vw;
-    height: 80vh;
-    background-color: $cream-opacity;
-    box-shadow: inset 0 0 10px #000000;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 3vh;
+    @include single-info-mobile
   }
 
   .sighting-details {
-    z-index: 1;
-    width: 90vw;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 0.8em;
-    margin-bottom: 2vh;
+    @include single-details-mobile;
   }
 
   .sighting-title {

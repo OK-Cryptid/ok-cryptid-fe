@@ -9,15 +9,13 @@
   }
 
   .search-container {
-      display: flex;
+    @include flex-space-around
       margin: 4%;
       width: 100%;
-      justify-content: space-around;
   }
 
   .sightings-header {
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between
     flex-direction: column;
     align-items: center;
     padding: 0 5vw;
@@ -44,8 +42,7 @@
 
   form {
     width: 40vw;
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     align-items: center;
     height: 4vh;
   }
@@ -55,8 +52,7 @@
   }
 
   .dropdown-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-column
     position: absolute;
     z-index: 1;
     margin-top: .5%;
@@ -71,15 +67,13 @@
   }
 
   .sightings-header {
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between
     align-items: center;
     margin: 2vw 3vw;
   }
 
   .search-container {
-    display: flex;
-    justify-content: space-around;
+    @include flex-space-around;
     width: 31%;
   }
 
@@ -107,8 +101,7 @@
   }
 
   .dropdown-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     position: absolute;
     z-index: 1;
     width: 12vw;
