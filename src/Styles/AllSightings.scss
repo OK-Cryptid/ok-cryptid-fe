@@ -3,45 +3,78 @@
 
 
 //~~~~~~~Mobile~~~~~~~
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 982px) {
   .all-sightings-container {
     @include flex-column;
   }
 
   .search-container {
-      display: flex;
-      margin: 2%;
+    @include flex-space-around
+      margin: 4%;
       width: 100%;
-      justify-content: space-around;
   }
 
   .sightings-header {
-    display: flex;
-    justify-content: space-between;
+    @include flex-space-between
     flex-direction: column;
     align-items: center;
     padding: 0 5vw;
   }
 
+  .cryptid-button {
+    @include cream-button;
+    box-sizing: border-box;
+    height: 4vh;
+    padding: 0vw 3vw;
+  }
+
+  .zipcode-input {
+    font-family: $Nova;
+    background-color: $cream;
+    color: black;
+    border-radius: 7px;
+    box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
+    border: none;
+    box-sizing: border-box;
+    height: 4vh;
+    text-align: center;
+  }
+
+  form {
+    width: 40vw;
+    @include flex-center;
+    align-items: center;
+    height: 4vh;
+  }
+
+  .sightings-text {
+    margin: 3vw;
+  }
+
+  .dropdown-container {
+    @include flex-column
+    position: absolute;
+    z-index: 1;
+    margin-top: .5%;
+    padding: 0vw 1vw;
+  }
 }
 
 //~~~~~~~computer~~~~~~~
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 983px) {
   .all-sightings-container {
     @include card-container;
   }
 
   .sightings-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5vw;
+    @include flex-space-between
+    align-items: center;
+    margin: 2vw 3vw;
   }
 
   .search-container {
-    display: flex;
-    justify-content: space-around;
-    margin: 2%;
-    width: 40%;
+    @include flex-space-around;
+    width: 31%;
   }
 
   .cryptid-button {
@@ -50,6 +83,30 @@
     box-sizing: border-box;
     height: 4vh;
   }
+
+  .zipcode-input {
+    font-family: $Nova;
+    background-color: $cream;
+    color: black;
+    border-radius: 7px;
+    box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
+    border: none;
+    padding: 0% 7%;
+    box-sizing: border-box;
+    height: 4vh;
+  }
+
+  .sightings-text {
+    margin: 0vw;
+  }
+
+  .dropdown-container {
+    @include flex-column;
+    position: absolute;
+    z-index: 1;
+    width: 12vw;
+    margin-top: .5%;
+  }
 }
 
 
@@ -57,28 +114,12 @@
   @include button-hover;
 }
 
-.zipcode-input {
-  background-color: $cream;
-  color: black;
-  border-radius: 7px;
-  box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
-  border: none;
-  padding: 7%;
-  box-sizing: border-box;
-  height: 4vh;
+.zipcode-input:focus {
+  outline: none;
 }
 
 .sightings-text {
   color: $cream;
-}
-
-.dropdown-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: 1;
-  width: 12vw;
-  margin-top: .5%;
 }
 
 .dropdown-button {
