@@ -4,30 +4,41 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { NavigationContext } from '../Context/NavigationContext'
 import Loading from './Loading.js'
-import ErrorModal from './ErrorModal';
+import ErrorModal from './ErrorModal'
+import DropDownButtons from './DropDownButtons';
 
-const GET_ALL_SIGHTINGS = gql`
-  query GetAllSightings{
-    getCryptids{
+
+const Search_Sightings = gql`
+query GetSightingsByLocation($location: String!){
+sightingByLocation(location: $location){
+		id
+    image
+    location
+    cryptid {
       name
-      sightings {
-        id
-        location
-        image
-      }
+      id
     }
   }
+}
 `
 
 const AllSightings = () => {
-  const { data, error, loading } = useQuery(GET_ALL_SIGHTINGS)
   const [display, setDisplay] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
   const [pageData, setPageData] = useState(null)
+  const [cryptids, setCryptids] = useState(null)
   const { setClick } = useContext(NavigationContext)
+  const { data, error, loading } = useQuery(Search_Sightings, { variables: { location: searchTerm }, fetchPolicy: "no-cache" })
 
   useEffect(() => {
     setClick(true)
   }, [])
+
+  const searchCryptids = (event) => {
+    event.preventDefault()
+    setPageData(null)
+    setSearchTerm(event.target.value)
+  }
 
   const toggleDisplay = () => {
     setDisplay(!display)
@@ -38,48 +49,33 @@ const AllSightings = () => {
     filterSightings(event.target.id)
   }
 
+  if (loading) return null
+
+  if (error) return <ErrorModal gqlError={error} />
+
+  if (!loading && !pageData) return setPageData(data.sightingByLocation)
+
   const filterSightings = (name) => {
-    const filteredSightings = data.getCryptids.filter(cryptid => {
-      return cryptid.name === name
+    const filteredSightings = data.sightingByLocation.filter(sighting => {
+      return sighting.cryptid.name === name
     })
     setPageData(filteredSightings)
   }
 
   const resetData = () => {
     toggleDisplay()
-    setPageData(data.getCryptids)
+    setPageData(data.sightingByLocation)
   }
 
-  if (loading) return <Loading/>
-  
-  if (error) return <ErrorModal gqlError={error}/>
-
-  if (!loading && !pageData) return setPageData(data.getCryptids)
-
-  const sightingCards = pageData.map(cryptid => {
-    return cryptid.sightings.map(sighting => {
-      return (
-        <SightingCard
-          key={sighting.id}
-          id={sighting.id}
-          location={sighting.location}
-          image={sighting.image}
-          name={cryptid.name}
-        />
-      )
-    })
-  })
-
-  const dropDownButtons = data.getCryptids.map(cryptid => {
+  const sightingCards = pageData.map(sighting => {
     return (
-      <button
-        key={cryptid.id}
-        id={cryptid.name}
-        className='dropdown-button'
-        onClick={(event) => handleClick(event)}
-      >
-        {cryptid.name}
-      </button>
+      <SightingCard
+        key={sighting.id}
+        id={sighting.id}
+        location={sighting.location}
+        image={sighting.image}
+        name={sighting.cryptid.name}
+      />
     )
   })
 
@@ -95,29 +91,23 @@ const AllSightings = () => {
             >
               Search by Cryptids
             </button>
-            {display &&
-              <div className='dropdown-container'>
-                <button
-                  onClick={() => resetData()}
-                  className='dropdown-button'
-                >
-                  All Cryptid Sightings
-                </button>
-                {dropDownButtons}
-              </div>
+            {display && <DropDownButtons handleClick={handleClick} resetData={resetData} />
             }
           </div>
           <form>
             <input
               className='zipcode-input'
-              type="text"
-              placeholder="Search by Zipcode"
+              type='text'
+              placeholder='Search by State'
+              autoFocus={true}
+              value={searchTerm}
+              onChange={(event) => searchCryptids(event)}
             />
           </form>
         </div>
       </div>
       <div className='all-sightings-container'>
-        {pageData && sightingCards}
+        {pageData.length ? sightingCards : <p className='no-sightings'>Cryptids have evaded being sighted at this location. Try another search.</p>}
       </div>
     </>
   )
