@@ -107,7 +107,7 @@ const AllSightings = () => {
         </div>
       </div>
       <div className='all-sightings-container'>
-        {pageData && sightingCards}
+        {pageData.length ? sightingCards : <p className='no-sightings'>There are no sightings at this location. Try another search.</p>}
       </div>
     </>
   )

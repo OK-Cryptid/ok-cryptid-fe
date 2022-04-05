@@ -89,3 +89,8 @@
 .dropdown-button:hover {
   @include button-hover;
 }
+
+.no-sightings {
+  color: $cream;
+  text-align: center;
+}
