@@ -34,14 +34,14 @@
   .sightings-header {
     display: flex;
     justify-content: space-between;
-    padding: 0 5vw;
+    padding: 0px 3vw;
+    align-items: center;
   }
 
   .search-container {
     display: flex;
     justify-content: space-around;
-    margin: 2%;
-    width: 40%;
+    width: 31%;
   }
 
   .cryptid-button {
@@ -58,6 +58,7 @@
 }
 
 .zipcode-input {
+  font-family: $Nova;
   background-color: $cream;
   color: black;
   border-radius: 7px;
@@ -66,6 +67,10 @@
   padding: 7%;
   box-sizing: border-box;
   height: 4vh;
+}
+
+.zipcode-input:focus {
+  outline: none;
 }
 
 .sightings-text {
