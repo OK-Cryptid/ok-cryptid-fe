@@ -18,7 +18,6 @@ const DropDownButtons = ({ handleClick, resetData }) => {
 
   if (error) return <ErrorModal gqlError={error} />
 
-  console.log(data)
   const dropDownButtons = data.getCryptids.map(cryptid => {
     return (
       <button
