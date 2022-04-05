@@ -23,6 +23,25 @@
     padding: 0 5vw;
   }
 
+  .cryptid-button {
+    @include cream-button;
+    width: 24vw;
+    box-sizing: border-box;
+    height: 4vh;
+  }
+
+  .zipcode-input {
+    font-family: $Nova;
+    background-color: $cream;
+    color: black;
+    border-radius: 7px;
+    box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
+    border: none;
+    padding: 7%;
+    box-sizing: border-box;
+    height: 4vh;
+    width: 24vw;
+  }
 }
 
 //~~~~~~~computer~~~~~~~
@@ -50,23 +69,23 @@
     box-sizing: border-box;
     height: 4vh;
   }
+
+  .zipcode-input {
+    font-family: $Nova;
+    background-color: $cream;
+    color: black;
+    border-radius: 7px;
+    box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
+    border: none;
+    padding: 7%;
+    box-sizing: border-box;
+    height: 4vh;
+  }
 }
 
 
 .cryptid-button:hover {
   @include button-hover;
-}
-
-.zipcode-input {
-  font-family: $Nova;
-  background-color: $cream;
-  color: black;
-  border-radius: 7px;
-  box-shadow: 0px 14px 29px -1px rgba(0, 0, 0, 0.65);
-  border: none;
-  padding: 7%;
-  box-sizing: border-box;
-  height: 4vh;
 }
 
 .zipcode-input:focus {

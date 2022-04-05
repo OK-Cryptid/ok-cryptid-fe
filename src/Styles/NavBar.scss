@@ -20,7 +20,6 @@
   }
 
   .logo-link-container {
-    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +37,7 @@
     font-size: 3vh;
     text-decoration: none;
     text-shadow: -2px 5px 5px rgba(53,53,59,0.59);
+    margin-right: 3vw;
   }
 
   .sightings-button {
