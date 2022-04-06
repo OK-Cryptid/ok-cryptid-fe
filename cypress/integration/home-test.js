@@ -1,7 +1,18 @@
+import '../fixtures/allCryptids.json'
 describe('Home page cypress test', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.intercept({
+      method: 'POST',
+      url: 'https://cryptic-garden-95478.herokuapp.com/graphiql',
+      headers: {
+        'x-gqpl-operation-name': 'GetCryptids'
+      }
+    },
+      {
+        fixture: 'allCryptids.json'
+      })
+      cy.visit('http://localhost:3000')
   })
   
   it('Should render elements to the page', () => {

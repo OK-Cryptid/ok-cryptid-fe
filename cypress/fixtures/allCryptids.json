@@ -1,0 +1,51 @@
+{
+  "data": {
+    "getCryptids": [
+      {
+        "name": "Alien",
+        "id": "7",
+        "image": "https://bit.ly/3tHKvBO"
+      },
+      {
+        "name": "Bigfoot",
+        "id": "1",
+        "image": "https://bit.ly/3JKsNDs"
+      },
+      {
+        "name": "Chupacabra",
+        "id": "4",
+        "image": "https://bit.ly/3wGyYov"
+      },
+      {
+        "name": "Jackalope",
+        "id": "9",
+        "image": "https://allthatsinteresting.com/wordpress/wp-content/uploads/2018/05/jackalope.jpg"
+      },
+      {
+        "name": "Loch Ness Monster",
+        "id": "8",
+        "image": "https://bit.ly/3Nons6V"
+      },
+      {
+        "name": "Mothman",
+        "id": "2",
+        "image": "https://bit.ly/3INwjLP"
+      },
+      {
+        "name": "Nightcrawler",
+        "id": "3",
+        "image": "https://bit.ly/37Yiei1"
+      },
+      {
+        "name": "Skinwalker",
+        "id": "6",
+        "image": "https://bit.ly/3uzpUPx"
+      },
+      {
+        "name": "Tommyknocker",
+        "id": "5",
+        "image": "https://bit.ly/3qDsItE"
+      }
+    ]
+  }
+}

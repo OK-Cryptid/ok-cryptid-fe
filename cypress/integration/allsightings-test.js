@@ -1,9 +1,21 @@
+import '../fixtures/allSightings.json'
 describe('All sightings page cypress test', () => {
 
   beforeEach(() => {
+    cy.intercept({
+      method: 'POST',
+      url: 'https://cryptic-garden-95478.herokuapp.com/graphiql',
+      headers: {
+        'x-gqpl-operation-name': 'GetSightingsByLocation'
+      }
+    },
+      {
+        fixture: 'allSightings.json'
+      })
     cy.visit('http://localhost:3000')
   })
 
+  
   it('Should start on the home page and click sighting button', () => {
     cy.get('.logo')
     cy.get('.home-message').contains('Ok Cryptid')
