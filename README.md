@@ -35,7 +35,7 @@ View our wire frame [here](https://www.figma.com/file/EuVIWxttyUChFLIbOqUx44/Oka
 
 The user can see and select any cryptid that peeks their interests.
 
-![landing_page_view](https://media.giphy.com/media/nhkpHvRK8D4mEdsBLR/giphy.gif)
+![landing_page_view](https://media.giphy.com/media/F2GTr24pG7z9ZLtLvF/giphy.gif)
 
 **View a single cryptid's details page:**
 
