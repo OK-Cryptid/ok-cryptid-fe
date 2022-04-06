@@ -19,28 +19,23 @@ sightingByLocation(location: $location){
 
 const SightingsList = ({ location, name }) => {
   const [searchLocation, setSearchLocation] = useState(location)
-  const [searchName, setSearchName] = useState(name)
   const { data, error, loading } = useQuery(Search_Sightings, { variables: { location: searchLocation }, fetchPolicy: "no-cache" })
 
   useEffect(() => {
     setSearchLocation(location)
   }, [location])
 
-	useEffect(() => {
-		setSearchName(name)
-	}, [name])
-
   if (loading) return null
 
   if (error) return <ErrorModal gqlError={error} />
 
-	let pageData = data.sightingByLocation
+  let pageData = data.sightingByLocation
 
-	if(name !== '')	{
-		pageData = data.sightingByLocation.filter(sighting => {
-				return sighting.cryptid.name === name
-			})
-	}
+  if (name !== '') {
+    pageData = data.sightingByLocation.filter(sighting => {
+      return sighting.cryptid.name === name
+    })
+  }
   const sightingCards = pageData.map(sighting => {
     return (
       <SightingCard
@@ -55,18 +50,18 @@ const SightingsList = ({ location, name }) => {
 
   return (
     <>
-    {pageData.length &&
-      <div className='all-sightings-container'>
-        {sightingCards}
-      </div>
-    }
-    {!pageData.length &&
-      <div className='no-sightings-container'>
-        <p className='no-sightings'>
-          Cryptids have evaded being sighted at this location. Try another search.
-        </p>
-      </div>
-    }
+      {pageData.length &&
+        <div className='all-sightings-container'>
+          {sightingCards}
+        </div>
+      }
+      {!pageData.length &&
+        <div className='no-sightings-container'>
+          <p className='no-sightings'>
+            Cryptids have evaded being sighted at this location. Try another search.
+          </p>
+        </div>
+      }
     </>
   )
 }

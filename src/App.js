@@ -12,17 +12,18 @@ import SingleCryptidSightings from './Components/SingleCryptidSightings';
 
 const App = () => {
   return (
-      <NavigationProvider>
-          <NavBar />
-          <ErrorModal />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/singlecryptid/:name" element={<SingleCryptid />} />
-            <Route path="/allsightings/" element={<AllSightings />} />
-            <Route path="/singlesighting/:name/:id" element={<SingleSighting />} />
-            <Route path="/singlecryptidsightings/:name" element={<SingleCryptidSightings />} />
-          </Routes>
-      </NavigationProvider>
+    <NavigationProvider>
+      <NavBar />
+      <ErrorModal />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/singlecryptid/:name" element={<SingleCryptid />} />
+        <Route path="/allsightings/" element={<AllSightings />} />
+        <Route path="/singlesighting/:name/:id" element={<SingleSighting />} />
+        <Route path="/singlecryptidsightings/:name" element={<SingleCryptidSightings />} />
+        {/* <Route path='*' element= */}
+      </Routes>
+    </NavigationProvider>
   );
 }
 
