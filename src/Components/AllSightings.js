@@ -1,9 +1,7 @@
 import '../Styles/AllSightings.scss'
 import React, { useState, useContext, useEffect } from 'react'
-import { useQuery, gql } from '@apollo/client'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { NavigationContext } from '../Context/NavigationContext'
-import Loading from './Loading.js'
 import DropDownButtons from './DropDownButtons'
 import SightingsList from './SightingsList'
 

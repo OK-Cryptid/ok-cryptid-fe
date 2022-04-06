@@ -4,7 +4,7 @@ describe('All sightings page cypress test', () => {
   beforeEach(() => {
     cy.intercept({
       method: 'POST',
-      url: 'https://cryptic-garden-95478.herokuapp.com/graphiql',
+      url: 'https://cryptic-garden-95478.herokuapp.com/graphql',
       headers: {
         'x-gqpl-operation-name': 'GetCryptid'
       }
