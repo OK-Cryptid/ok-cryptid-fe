@@ -29,7 +29,7 @@ Ok Cryptid is here to help you have your very own cryptid encounter! We’ll hel
 
 ## Project Specs
 
-View the spec for this project
+View our wire frame [here](https://www.figma.com/file/EuVIWxttyUChFLIbOqUx44/Okay-Cryptid?node-id=0%3A1) 
 
 **Homepage:**
 
@@ -77,10 +77,10 @@ To run this app locally:
 
 1. fork this repository
 2. run ```git clone git clone git@github.com:OK-Cryptid/ok-cryptid-fe.git``` in your command line
-3. Run ```cd rancidtomatillos``` to navigate into the repository
+3. Run ```cd ok-cryptid-fe``` to navigate into the repository
 4. Run ```npm install```
 5. Run ```npm start```
-6. Visit ```http://localhost:3000/``` in your browser to view the Rancid Tomatillos app!
+6. Visit ```http://localhost:3000/``` in your browser to view the OK Cryptid app!
 7. Open a second terminal tab and run ```npm run cypress``` (while localhost:3000 is still running) to access the cypress testing for this app
 
 ## api
