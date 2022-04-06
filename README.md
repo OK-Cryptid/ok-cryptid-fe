@@ -22,10 +22,10 @@ Ok Cryptid is here to help you have your very own cryptid encounter! We’ll hel
 
 ## Project Goals
 
-- Gain competency with GraphiQL
+- Gain competency with GraphQL
 - Create a multi-page UX using Router V6
 - Deploy to Heroku
-- Learn and implement Cypress stubbing for GraphiQL
+- Learn and implement Cypress stubbing for GraphQL
 
 ## Project Specs
 
@@ -35,17 +35,21 @@ View the spec for this project
 
 The user can select see and select any cryptid that peeks their interests.
 
+
 **View a single cryptid's details page:**
 
 When a cryptid is selected, the user is directed to a page with information about that specific cryptid. If the user would like to go a step furture, they can click the 'sightings of *' button to where that cryptid has been spotted.
+
 
 **All Sightings page:**
 
 From the all sightings page, a user can filter their search by cryptid or location with a state input search. If a cryptid has been seen in that location, the sighting will be rendered, if the location does not have any sightings the user is prompted to try another search.
 
+
 **Single Sighting page:**
 
 When a sighting is selected, they are taken to that specific sighting which the provides links to hiking trails near by. When the link is clicked a new tab opens with an external AllTrails link.
+
 
 **Error handling:**
 
@@ -55,7 +59,7 @@ If an error occurs when trying to access the app, the user is shown an error mod
 ## Challenges
 
 - The OK Cryptid app was built in the short time span of 15 days.
-- This was our team's first time implementing GraphiQL into a project. Adding this to our project required hours of research and bug solving.
+- This was our team's first time implementing GraphQL into a project. Adding this to our project required hours of research and bug solving.
 - Negotiating our api contract was difficult, simply because we didn't know how GQL worked at first.
 
 
@@ -81,7 +85,7 @@ To run this app locally:
 
 ## api
 
-For this project, we access data from a GraphiQl API created by our backend team.
+For this project, we access data from a GraphQl API created by our backend team.
 
 [Ok Cryptid api repo](https://github.com/OK-Cryptid/ok_cryptid_be)
 
@@ -98,6 +102,11 @@ For this project, we access data from a GraphiQl API created by our backend team
 ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 
 [![OK-Cryptid](https://circleci.com/gh/OK-Cryptid/ok_cryptid_be.svg?style=svg)](https://app.circleci.com/pipelines/github/OK-Cryptid)
+
+![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
+
+![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+
 
 # Contributors
 
