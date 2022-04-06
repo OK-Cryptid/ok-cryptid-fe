@@ -35,6 +35,8 @@ View our wire frame [here](https://www.figma.com/file/EuVIWxttyUChFLIbOqUx44/Oka
 
 The user can see and select any cryptid that peeks their interests.
 
+[homepage](https://media.giphy.com/media/ucWF9BtZid4Mbd266i/giphy.gif)
+
 **View a single cryptid's details page:**
 
 When a cryptid is selected, the user is directed to a page with information about that specific cryptid. If the user would like to go a step furture, they can click the 'sightings of *' button to where that cryptid has been spotted.
