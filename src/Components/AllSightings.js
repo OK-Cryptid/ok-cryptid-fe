@@ -1,43 +1,33 @@
-import '../Styles/AllSightings.scss';
-import SightingCard from './SightingCard';
-import React, { useState, useContext, useEffect } from 'react';
-import { useQuery, gql } from '@apollo/client';
+import '../Styles/AllSightings.scss'
+import React, { useState, useContext, useEffect } from 'react'
+import { useQuery, gql } from '@apollo/client'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { NavigationContext } from '../Context/NavigationContext'
 import Loading from './Loading.js'
-import ErrorModal from './ErrorModal'
-import DropDownButtons from './DropDownButtons';
-
-
-const Search_Sightings = gql`
-query GetSightingsByLocation($location: String!){
-sightingByLocation(location: $location){
-		id
-    image
-    location
-    cryptid {
-      name
-      id
-    }
-  }
-}
-`
+import DropDownButtons from './DropDownButtons'
+import SightingsList from './SightingsList'
 
 const AllSightings = () => {
   const [display, setDisplay] = useState(false)
-  const [searchTerm, setSearchTerm] = useState('')
-  const [pageData, setPageData] = useState(null)
-  const [cryptids, setCryptids] = useState(null)
+	const [location, setLocation] = useState('')
+	const [name, setName] = useState('')
+	const [searchParams, setSearchParams] = useSearchParams();
   const { setClick } = useContext(NavigationContext)
-  const { data, error, loading } = useQuery(Search_Sightings, { variables: { location: searchTerm }, fetchPolicy: "no-cache" })
 
   useEffect(() => {
     setClick(true)
   }, [])
 
+  useEffect(() => {
+    const nameParam = searchParams.get('name') || ''
+    const locationParam = searchParams.get('location') || ''
+    setName(nameParam)
+    setLocation(locationParam)
+  }, [searchParams])
+
   const searchCryptids = (event) => {
     event.preventDefault()
-    setPageData(null)
-    setSearchTerm(event.target.value)
+		setSearchParams({name: name, location: event.target.value})
   }
 
   const toggleDisplay = () => {
@@ -46,38 +36,13 @@ const AllSightings = () => {
 
   const handleClick = (event) => {
     toggleDisplay()
-    filterSightings(event.target.id)
-  }
-
-  if (loading) return null
-
-  if (error) return <ErrorModal gqlError={error} />
-
-  if (!loading && !pageData) return setPageData(data.sightingByLocation)
-
-  const filterSightings = (name) => {
-    const filteredSightings = data.sightingByLocation.filter(sighting => {
-      return sighting.cryptid.name === name
-    })
-    setPageData(filteredSightings)
+		setSearchParams({name: event.target.id, location: location})
   }
 
   const resetData = () => {
     toggleDisplay()
-    setPageData(data.sightingByLocation)
+    setSearchParams({})
   }
-
-  const sightingCards = pageData.map(sighting => {
-    return (
-      <SightingCard
-        key={sighting.id}
-        id={sighting.id}
-        location={sighting.location}
-        image={sighting.image}
-        name={sighting.cryptid.name}
-      />
-    )
-  })
 
   return (
     <>
@@ -91,33 +56,26 @@ const AllSightings = () => {
             >
               Search by Cryptids
             </button>
-            {display && <DropDownButtons handleClick={handleClick} resetData={resetData} />
+            {display &&
+							<DropDownButtons
+								handleClick={handleClick}
+								resetData={resetData}
+							/>
             }
           </div>
-          <form>
+          <form onSubmit={(event) => event.preventDefault()}>
             <input
               className='zipcode-input'
               type='text'
               placeholder='Search by State'
               autoFocus={true}
-              value={searchTerm}
+              value={location}
               onChange={(event) => searchCryptids(event)}
             />
           </form>
         </div>
       </div>
-      {pageData.length &&
-				<div className='all-sightings-container'>
-					{sightingCards}
-      	</div>
-			}
-			{!pageData.length &&
-				<div className='no-sightings-container'>
-					<p className='no-sightings'>
-						Cryptids have evaded being sighted at this location. Try another search.
-					</p>
-				</div>
-			}
+			<SightingsList location={location} name={name}/>
     </>
   )
 }
