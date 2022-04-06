@@ -18,34 +18,29 @@ sightingByLocation(location: $location){
 `
 
 const SightingsList = ({ location, name }) => {
-  const [pageData, setPageData] = useState(null)
   const [searchLocation, setSearchLocation] = useState(location)
   const [searchName, setSearchName] = useState(name)
   const { data, error, loading } = useQuery(Search_Sightings, { variables: { location: searchLocation }, fetchPolicy: "no-cache" })
 
   useEffect(() => {
-    if(name != '' && !loading) {
-      filterSightings(name)
-    } else {
-      setPageData(null)
-    }
-    setSearchName(name)
     setSearchLocation(location)
-  }, [name, location])
+  }, [location])
+
+	useEffect(() => {
+		setSearchName(name)
+	}, [name])
 
   if (loading) return null
 
   if (error) return <ErrorModal gqlError={error} />
 
-  if (!loading && !pageData) return setPageData(data.sightingByLocation)
+	let pageData = data.sightingByLocation
 
-  const filterSightings = (name) => {
-    const filteredSightings = data.sightingByLocation.filter(sighting => {
-      return sighting.cryptid.name === name
-    })
-    setPageData(filteredSightings)
-  }
-
+	if(name !== '')	{
+		pageData = data.sightingByLocation.filter(sighting => {
+				return sighting.cryptid.name === name
+			})
+	}
   const sightingCards = pageData.map(sighting => {
     return (
       <SightingCard
