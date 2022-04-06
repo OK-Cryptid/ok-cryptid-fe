@@ -33,7 +33,7 @@ View our wire frame [here](https://www.figma.com/file/EuVIWxttyUChFLIbOqUx44/Oka
 
 **Homepage:**
 
-The user can select see and select any cryptid that peeks their interests.
+The user can see and select any cryptid that peeks their interests.
 
 
 **View a single cryptid's details page:**
@@ -112,13 +112,13 @@ For this project, we access data from a GraphQl API created by our backend team.
 
 ## Frontend Team
 
-Kayla Durrett - [GitHub](https://github.com/krdurrett)  [LinkedIn](https://www.linkedin.com/in/kayla-durrett/)
+Kayla Durrett (she/her) - [GitHub](https://github.com/krdurrett)  [LinkedIn](https://www.linkedin.com/in/kayla-durrett/)
 
-Jasmyn Hicks- [GitHub](https://github.com/jasmyn2244)  [LinkedIn](https://www.linkedin.com/in/jasmyn-hicks/)
+Jasmyn Hicks (she/her) - [GitHub](https://github.com/jasmyn2244)  [LinkedIn](https://www.linkedin.com/in/jasmyn-hicks/)
 
-Richard Rosa-Serrano - [GitHub](https://github.com/RosaTheDev)  [LinkedIn](https://www.linkedin.com/in/rosathedev/)
+Richard Rosa-Serrano (he/him) - [GitHub](https://github.com/RosaTheDev)  [LinkedIn](https://www.linkedin.com/in/rosathedev/)
 
-Grace Gardner - [GitHub](https://github.com/GraceGardner)  [LinkedIn](https://www.linkedin.com/in/grace-iris-gardner/)
+Grace Gardner (she/her) - [GitHub](https://github.com/GraceGardner)  [LinkedIn](https://www.linkedin.com/in/grace-iris-gardner/)
 
 
 
@@ -126,10 +126,10 @@ Grace Gardner - [GitHub](https://github.com/GraceGardner)  [LinkedIn](https://ww
 
 [Backend Repo](https://github.com/OK-Cryptid/ok_cryptid_be)
 
-Mallory Vining - [GitHub](https://github.com/Malllll12)  [LinkedIn](https://www.linkedin.com/in/mallory-vining/)
+Mallory Vining (she/her) - [GitHub](https://github.com/Malllll12)  [LinkedIn](https://www.linkedin.com/in/mallory-vining/)
 
-Darren Kulback - [GitHub](https://github.com/dkulback)  [LinkedIn](https://www.linkedin.com/in/darren-kulback-9b2394189/)
+Darren Kulback (he/him) - [GitHub](https://github.com/dkulback)  [LinkedIn](https://www.linkedin.com/in/darren-kulback-9b2394189/)
 
-Parker Lockhart - [GitHub](https://github.com/ParkerLockhart)  [LinkedIn](https://www.linkedin.com/in/parker-lockhart/)
+Parker Lockhart (they/them) - [GitHub](https://github.com/ParkerLockhart)  [LinkedIn](https://www.linkedin.com/in/parker-lockhart/)
 
-Eric Chon - [GitHub](https://github.com/echon006)  [LinkedIn](https://www.linkedin.com/in/eric-chon/)
+Eric Chon (he/him) - [GitHub](https://github.com/echon006)  [LinkedIn](https://www.linkedin.com/in/eric-chon/)
