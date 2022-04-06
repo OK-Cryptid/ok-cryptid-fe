@@ -9,6 +9,7 @@ import NavBar from './Components/NavBar';
 import ErrorModal from './Components/ErrorModal'
 import { NavigationProvider } from './Context/NavigationContext';
 import SingleCryptidSightings from './Components/SingleCryptidSightings';
+import Error404 from './Components/Error404'
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
         <Route path="/allsightings/" element={<AllSightings />} />
         <Route path="/singlesighting/:name/:id" element={<SingleSighting />} />
         <Route path="/singlecryptidsightings/:name" element={<SingleCryptidSightings />} />
-        {/* <Route path='*' element= */}
+        <Route path='/*' element={<Error404 />} />
       </Routes>
     </NavigationProvider>
   );

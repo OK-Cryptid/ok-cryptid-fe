@@ -1,0 +1,16 @@
+@import "./_variables";
+
+.error-404-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $cream;
+}
+
+.error {
+  font-size: x-large;
+}
+
+.message {
+  font-size: large;
+}
