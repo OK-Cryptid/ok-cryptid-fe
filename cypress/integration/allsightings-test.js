@@ -15,7 +15,7 @@ describe('All sightings page cypress test', () => {
     cy.visit('http://localhost:3000')
   })
 
-  
+
   it('Should start on the home page and click sighting button', () => {
     cy.get('.logo')
     cy.get('.home-message').contains('Ok Cryptid')
@@ -35,13 +35,16 @@ describe('All sightings page cypress test', () => {
     cy.get('.all-sightings-container')
   })
 
-  it('Should click on a sighting of a random cryptoid, and view itss information', () => {
+  it('Should click on a sighting of a random cryptoid, and view its information', () => {
     cy.get('.sightings-button').click()
     cy.get('\#\\32').click()
     cy.get('.sighting-photo')
     cy.get('.sighting-title').contains('05-24-2001')
     cy.get('.sighting-location').contains('Location:')
     cy.get('#sightingDescription')
+    cy.get('.trail-links').eq(1).should('have.attr', 'href', 'https://www.alltrails.com/explore/trail/us/colorado/mineral-belt-trail')
+      .click()
+    cy.url('https://www.alltrails.com/explore/trail/us/colorado/mineral-belt-trail')
   })
 
   it('Should filter by searched cryptid and see all the sightings of those cryptoids and move back to all the sightings', () => {
