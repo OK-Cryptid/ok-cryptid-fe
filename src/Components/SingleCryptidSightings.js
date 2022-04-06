@@ -3,6 +3,7 @@ import SightingCard from './SightingCard';
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import ErrorModal from './ErrorModal';
+import Loading from './Loading';
 import { useParams } from 'react-router-dom';
 
 const GET_SINGLE_CRYPTID = gql`
@@ -25,12 +26,11 @@ const SingleCryptidSightings = () => {
     }
   })
 
-  if (loading) return "Loading..."
+  if (loading) return <Loading />
 
   if (error) return <ErrorModal gqlError={error}/>
 
   const sightingCards = data.cryptidByName[0].sightings.map(sighting => {
-    console.log(sighting)
     return (
       <SightingCard
         key={sighting.id}
@@ -42,7 +42,6 @@ const SingleCryptidSightings = () => {
     )
   })
 
-
   return (
     <>
       <div className='sightings-header'>
@@ -51,7 +50,6 @@ const SingleCryptidSightings = () => {
       <div className='all-sightings-container'>
         {sightingCards}
       </div>
-
     </>
   )
 }
