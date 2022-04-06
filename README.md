@@ -101,7 +101,8 @@ For this project, we access data from a GraphiQl API created by our backend team
 
 # Contributors
 
-##Frontend Team
+## Frontend Team
+
 Kayla Durrett - [GitHub](https://github.com/krdurrett)[LinkedIn](https://www.linkedin.com/in/kayla-durrett/)
 
 Jasmyn Hicks- [GitHub](https://github.com/jasmyn2244)[LinkedIn](https://www.linkedin.com/in/jasmyn-hicks/)
@@ -112,7 +113,7 @@ Grace Gardner - [GitHub](https://github.com/GraceGardner)[LinkedIn](https://www.
 
 
 
-##Backend Team
+## Backend Team
 
 [Backend Repo](https://github.com/OK-Cryptid/ok_cryptid_be)
 
