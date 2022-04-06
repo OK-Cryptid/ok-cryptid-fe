@@ -103,13 +103,13 @@ For this project, we access data from a GraphiQl API created by our backend team
 
 ## Frontend Team
 
-Kayla Durrett - [GitHub](https://github.com/krdurrett)[LinkedIn](https://www.linkedin.com/in/kayla-durrett/)
+Kayla Durrett - [GitHub](https://github.com/krdurrett)  [LinkedIn](https://www.linkedin.com/in/kayla-durrett/)
 
-Jasmyn Hicks- [GitHub](https://github.com/jasmyn2244)[LinkedIn](https://www.linkedin.com/in/jasmyn-hicks/)
+Jasmyn Hicks- [GitHub](https://github.com/jasmyn2244)  [LinkedIn](https://www.linkedin.com/in/jasmyn-hicks/)
 
-Richard Rosa-Serrano - [GitHub](https://github.com/RosaTheDev)[LinkedIn](https://www.linkedin.com/in/rosathedev/)
+Richard Rosa-Serrano - [GitHub](https://github.com/RosaTheDev)  [LinkedIn](https://www.linkedin.com/in/rosathedev/)
 
-Grace Gardner - [GitHub](https://github.com/GraceGardner)[LinkedIn](https://www.linkedin.com/in/grace-iris-gardner/)
+Grace Gardner - [GitHub](https://github.com/GraceGardner)  [LinkedIn](https://www.linkedin.com/in/grace-iris-gardner/)
 
 
 
@@ -117,10 +117,10 @@ Grace Gardner - [GitHub](https://github.com/GraceGardner)[LinkedIn](https://www.
 
 [Backend Repo](https://github.com/OK-Cryptid/ok_cryptid_be)
 
-Mallory Vining - [GitHub](https://github.com/Malllll12)[LinkedIn](https://www.linkedin.com/in/mallory-vining/)
+Mallory Vining - [GitHub](https://github.com/Malllll12)  [LinkedIn](https://www.linkedin.com/in/mallory-vining/)
 
-Darren Kulback - [GitHub](https://github.com/dkulback)[LinkedIn](https://www.linkedin.com/in/darren-kulback-9b2394189/)
+Darren Kulback - [GitHub](https://github.com/dkulback)  [LinkedIn](https://www.linkedin.com/in/darren-kulback-9b2394189/)
 
-Parker Lockhart - [GitHub](https://github.com/ParkerLockhart)[LinkedIn](https://www.linkedin.com/in/parker-lockhart/)
+Parker Lockhart - [GitHub](https://github.com/ParkerLockhart)  [LinkedIn](https://www.linkedin.com/in/parker-lockhart/)
 
-Eric Chon - [GitHub](https://github.com/echon006)[LinkedIn](https://www.linkedin.com/in/eric-chon/)
+Eric Chon - [GitHub](https://github.com/echon006)  [LinkedIn](https://www.linkedin.com/in/eric-chon/)
