@@ -59,6 +59,7 @@ When a sighting is selected, they are taken to that specific sighting which the 
 
 If an error occurs when trying to access the app, the user is shown an error modal letting them know what went wrong.
 
+![error_page](https://media.giphy.com/media/N2ciBly97edywTdkEC/giphy.gif)
 
 ## Challenges
 
