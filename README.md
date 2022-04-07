@@ -53,6 +53,7 @@ From the all sightings page, a user can filter their search by cryptid or locati
 
 When a sighting is selected, they are taken to that specific sighting which the provides links to hiking trails near by. When the link is clicked a new tab opens with an external AllTrails link.
 
+![single_sighting_page](https://media.giphy.com/media/BpYKVQfoQZ0z3UcYJp/giphy.gif)
 
 **Error handling:**
 
