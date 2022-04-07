@@ -47,6 +47,7 @@ When a cryptid is selected, the user is directed to a page with information abou
 
 From the all sightings page, a user can filter their search by cryptid or location with a state input search. If a cryptid has been seen in that location, the sighting will be rendered, if the location does not have any sightings the user is prompted to try another search.
 
+![all_sightings_page](https://media.giphy.com/media/wWgeFxzkvQIre5I71c/giphy.gif)
 
 **Single Sighting page:**
 
