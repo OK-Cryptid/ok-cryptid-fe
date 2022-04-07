@@ -41,6 +41,7 @@ The user can see and select any cryptid that peeks their interests.
 
 When a cryptid is selected, the user is directed to a page with information about that specific cryptid. If the user would like to go a step furture, they can click the 'sightings of *' button to where that cryptid has been spotted.
 
+![single_cryptid_details](https://media.giphy.com/media/Ofak9lDfb1oBxbLPSm/giphy.gif)
 
 **All Sightings page:**
 
